@@ -8,7 +8,7 @@ namespace GameControl
 {
     public class GameControl
     {
-        public int HighScore { get; set; }
+        
 
 
         public GameControl() { 
@@ -30,21 +30,39 @@ namespace GameControl
 
 
         }
-        //call triva to do its thing
-        public void encounterWumpus()
+        //the game is puased, make sure that the pause menu is played
+        public void PauseGame()
         {
 
             
-
-
-
         }
-        //interact with cave object and gamelocation to move the player to the correct room
-        public void playerMovesToNextRoom()
+
+        
+        
+        public void displayHighScores()
         {
+
+
+
+
 
         }
         
+        public void displaySplashScreen()
+        {
+
+
+
+
+        }
+
+        public void displayCurrentRoom()
+        {
+
+
+
+
+        }
         
 
 

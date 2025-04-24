@@ -1,6 +1,6 @@
 ﻿namespace GameControl
 {
-    partial class Form1
+    partial class FormWumpus
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,32 +29,55 @@
         private void InitializeComponent()
         {
             buttonStart = new Button();
+            buttonHighScore = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // buttonStart
             // 
-            buttonStart.Location = new Point(177, 104);
+            buttonStart.Location = new Point(220, 172);
             buttonStart.Name = "buttonStart";
             buttonStart.Size = new Size(321, 59);
             buttonStart.TabIndex = 0;
             buttonStart.Text = "Start";
             buttonStart.UseVisualStyleBackColor = true;
-            buttonStart.Click += buttonStart_Click;
             // 
-            // Form1
+            // buttonHighScore
+            // 
+            buttonHighScore.Location = new Point(220, 277);
+            buttonHighScore.Name = "buttonHighScore";
+            buttonHighScore.Size = new Size(321, 59);
+            buttonHighScore.TabIndex = 1;
+            buttonHighScore.Text = "High Scores";
+            buttonHighScore.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(280, 20);
+            label1.Name = "label1";
+            label1.Size = new Size(38, 15);
+            label1.TabIndex = 3;
+            label1.Text = "label1";
+            // 
+            // FormWumpus
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label1);
+            Controls.Add(buttonHighScore);
             Controls.Add(buttonStart);
-            Name = "Form1";
-            Text = "Form1";
-            Load += Form1_Load;
+            Name = "FormWumpus";
+            Text = "Wumpus";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Button buttonStart;
+        private Button buttonHighScore;
+        private Label label1;
     }
 }
