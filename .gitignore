@@ -398,3 +398,7 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/WumpusTest/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/.vs/ProjectEvaluation/wumpustest.metadata.v9.bin
+/WumpusTest/obj/Debug/WumpusTest.csproj.AssemblyReference.cache
+/WumpusTest/obj/Debug/DesignTimeResolveAssemblyReferences.cache
