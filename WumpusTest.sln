@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameControl", "GameControl\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameControl Test", "GameControl Test\GameControl Test.csproj", "{0A3A4259-D664-444F-BD9B-BFD55F07F50D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "High_Score", "High_Score\High_Score.csproj", "{F6322F14-3D7A-4D6D-8327-B82943DE28B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0A3A4259-D664-444F-BD9B-BFD55F07F50D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A3A4259-D664-444F-BD9B-BFD55F07F50D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A3A4259-D664-444F-BD9B-BFD55F07F50D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6322F14-3D7A-4D6D-8327-B82943DE28B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6322F14-3D7A-4D6D-8327-B82943DE28B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6322F14-3D7A-4D6D-8327-B82943DE28B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6322F14-3D7A-4D6D-8327-B82943DE28B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
