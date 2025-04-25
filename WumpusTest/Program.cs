@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WumpusTest
+namespace Cave
 {
     internal static class Program
     {

@@ -1,4 +1,4 @@
-﻿namespace WumpusTest
+﻿namespace Cave
 {
     partial class Form1
     {
