@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/GameLocation/bin/Debug/net8.0-windows
+/GameLocation/obj
+/WumpusTest/bin/Debug/WumpusTest.exe
+/WumpusTest/bin/Debug/WumpusTest.pdb

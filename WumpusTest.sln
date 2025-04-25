@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WumpusTest", "WumpusTest\WumpusTest.csproj", "{807405D5-0528-470D-A63D-5CCDE3EFBABD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameLocation", "GameLocation\GameLocation.csproj", "{4A34550F-1EDB-4B08-ADE9-949D4BBF38E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{807405D5-0528-470D-A63D-5CCDE3EFBABD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{807405D5-0528-470D-A63D-5CCDE3EFBABD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{807405D5-0528-470D-A63D-5CCDE3EFBABD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A34550F-1EDB-4B08-ADE9-949D4BBF38E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A34550F-1EDB-4B08-ADE9-949D4BBF38E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A34550F-1EDB-4B08-ADE9-949D4BBF38E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A34550F-1EDB-4B08-ADE9-949D4BBF38E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
