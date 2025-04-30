@@ -9,7 +9,9 @@ namespace CaveTest
 
         private void FormCave_Load(object sender, EventArgs e)
         {
+            PrintControllerWithStatusDialog() {
 
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

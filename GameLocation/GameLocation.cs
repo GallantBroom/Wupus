@@ -14,7 +14,7 @@ namespace GameLocation
         {
             // Constructor logic here
         }
-        public void spawn()
+        public (int Wumpusspawn, int Batspawn, int Pitspawn) spawn()
         {
             Random random = new Random();
             int Batspawn = random.Next(1, 30);
@@ -35,6 +35,7 @@ namespace GameLocation
                     Wumpusspawn = +1;
                 }
             }
+            return(Wumpusspawn,Batspawn, Pitspawn);
         }
            
 
