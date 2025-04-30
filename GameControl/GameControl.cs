@@ -19,7 +19,12 @@ namespace GameControl
         //start the game, go to the cave
         public void startGame()
         {
-           
+           Game GameHappeningDLG = new Game();
+
+
+
+
+
 
         }
         // end the game, go back to the menu screen

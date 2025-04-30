@@ -41,6 +41,7 @@
             buttonStart.TabIndex = 0;
             buttonStart.Text = "Start";
             buttonStart.UseVisualStyleBackColor = true;
+            buttonStart.Click += buttonStart_Click;
             // 
             // buttonHighScore
             // 
@@ -54,11 +55,12 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(280, 20);
+            label1.Font = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(255, 62);
             label1.Name = "label1";
-            label1.Size = new Size(38, 15);
+            label1.Size = new Size(255, 40);
             label1.TabIndex = 3;
-            label1.Text = "label1";
+            label1.Text = "Hunt The Wumpus";
             // 
             // FormWumpus
             // 
