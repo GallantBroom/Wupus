@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cave", "WumpusTest\Cave.csproj", "{807405D5-0528-470D-A63D-5CCDE3EFBABD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaveTest", "CaveTest\CaveTest.csproj", "{D484FC2D-3F57-455F-9B72-CA03EF12F984}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameControl", "GameControl\GameControl.csproj", "{6A8A2306-9E6E-45D5-AF16-B1D27D407DC2}"
@@ -15,7 +13,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameControl Test", "GameCon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "High_Score", "High_Score\High_Score.csproj", "{F6322F14-3D7A-4D6D-8327-B82943DE28B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{36902433-09BA-4623-82EB-0F842E60DD0C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{A42B58C1-02A7-447B-ABF6-5342772F7B68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cave", "Cave\Cave.csproj", "{707DD2DF-1F13-44A7-AC94-439C845B09D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{807405D5-0528-470D-A63D-5CCDE3EFBABD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{807405D5-0528-470D-A63D-5CCDE3EFBABD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{807405D5-0528-470D-A63D-5CCDE3EFBABD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{807405D5-0528-470D-A63D-5CCDE3EFBABD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D484FC2D-3F57-455F-9B72-CA03EF12F984}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D484FC2D-3F57-455F-9B72-CA03EF12F984}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D484FC2D-3F57-455F-9B72-CA03EF12F984}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -47,10 +43,14 @@ Global
 		{F6322F14-3D7A-4D6D-8327-B82943DE28B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6322F14-3D7A-4D6D-8327-B82943DE28B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6322F14-3D7A-4D6D-8327-B82943DE28B6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{36902433-09BA-4623-82EB-0F842E60DD0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{36902433-09BA-4623-82EB-0F842E60DD0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{36902433-09BA-4623-82EB-0F842E60DD0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{36902433-09BA-4623-82EB-0F842E60DD0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A42B58C1-02A7-447B-ABF6-5342772F7B68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A42B58C1-02A7-447B-ABF6-5342772F7B68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A42B58C1-02A7-447B-ABF6-5342772F7B68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A42B58C1-02A7-447B-ABF6-5342772F7B68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{707DD2DF-1F13-44A7-AC94-439C845B09D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{707DD2DF-1F13-44A7-AC94-439C845B09D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{707DD2DF-1F13-44A7-AC94-439C845B09D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{707DD2DF-1F13-44A7-AC94-439C845B09D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
