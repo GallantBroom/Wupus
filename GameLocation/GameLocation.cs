@@ -70,11 +70,12 @@ namespace GameLocation
             WumpusSpawn = Wumpusspawn;
             PitSpawn = Pitspawn;
         }
-           
+
 
         public void PlayerMove()
-        {
-            if (BatSpawn = )
+        { 
+
         }
+           
     }
 }
