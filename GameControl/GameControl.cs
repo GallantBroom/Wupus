@@ -28,10 +28,18 @@ namespace GameControl
 
         }
         // end the game, go back to the menu screen
-        public void endGame()
+        public void GameLose()
         {
            
             
+
+
+        }
+
+        public void GameWin()
+        {
+
+
 
 
         }
@@ -68,12 +76,20 @@ namespace GameControl
 
 
         }
-        
+        public void pitFall()
+        {
 
 
 
-      
 
+
+        }
+
+        public void playerWasTrapped(int newPlayerLocation, int trappedSpawned)
+        {
+
+            
+        }
 
 
        

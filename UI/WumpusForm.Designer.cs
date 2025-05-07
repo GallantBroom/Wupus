@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class WumpusForm
+    partial class WumpusStart
     {
         /// <summary>
         /// Required designer variable.
@@ -28,99 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonStartGame = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.labelTitleCave = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WumpusStart));
+            pictureBoxStartButton = new PictureBox();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStartButton).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
-            // buttonStartGame
+            // pictureBoxStartButton
             // 
-            this.buttonStartGame.Location = new System.Drawing.Point(203, 152);
-            this.buttonStartGame.Name = "buttonStartGame";
-            this.buttonStartGame.Size = new System.Drawing.Size(272, 31);
-            this.buttonStartGame.TabIndex = 0;
-            this.buttonStartGame.Text = "Cave 1";
-            this.buttonStartGame.UseVisualStyleBackColor = true;
-            this.buttonStartGame.Click += new System.EventHandler(this.buttonStartGame_Click);
+            pictureBoxStartButton.BackColor = SystemColors.ControlLightLight;
+            pictureBoxStartButton.BackgroundImageLayout = ImageLayout.None;
+            pictureBoxStartButton.BorderStyle = BorderStyle.FixedSingle;
+            pictureBoxStartButton.Image = (Image)resources.GetObject("pictureBoxStartButton.Image");
+            pictureBoxStartButton.Location = new Point(380, 137);
+            pictureBoxStartButton.Name = "pictureBoxStartButton";
+            pictureBoxStartButton.Size = new Size(108, 45);
+            pictureBoxStartButton.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxStartButton.TabIndex = 0;
+            pictureBoxStartButton.TabStop = false;
+            pictureBoxStartButton.Click += pictureBoxStartButton_Click;
             // 
-            // button2
+            // pictureBox1
             // 
-            this.button2.Location = new System.Drawing.Point(203, 215);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(272, 31);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Cave 2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            pictureBox1.BackColor = SystemColors.ControlLightLight;
+            pictureBox1.BackgroundImageLayout = ImageLayout.None;
+            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(380, 227);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(108, 45);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
             // 
-            // button3
+            // WumpusStart
             // 
-            this.button3.Location = new System.Drawing.Point(203, 275);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(272, 26);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Cave 3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(203, 331);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(272, 29);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Cave 4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(203, 389);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(272, 26);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Cave 5";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // labelTitleCave
-            // 
-            this.labelTitleCave.AutoSize = true;
-            this.labelTitleCave.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitleCave.Location = new System.Drawing.Point(182, 50);
-            this.labelTitleCave.Name = "labelTitleCave";
-            this.labelTitleCave.Size = new System.Drawing.Size(357, 55);
-            this.labelTitleCave.TabIndex = 5;
-            this.labelTitleCave.Text = "Choose a Cave";
-            // 
-            // WumpusForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.labelTitleCave);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.buttonStartGame);
-            this.Name = "WumpusForm";
-            this.Text = "Escape The Wumpus";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(255, 255, 128);
+            ClientSize = new Size(933, 519);
+            Controls.Add(pictureBox1);
+            Controls.Add(pictureBoxStartButton);
+            ForeColor = SystemColors.ControlText;
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "WumpusStart";
+            Text = "Escape The Wumpus";
+            ((System.ComponentModel.ISupportInitialize)pictureBoxStartButton).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
 
-        private System.Windows.Forms.Button buttonStartGame;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label labelTitleCave;
+        private PictureBox pictureBoxStartButton;
+        private PictureBox pictureBox1;
     }
 }

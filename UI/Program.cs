@@ -14,7 +14,7 @@ namespace UI
 
             
 
-            Application.Run(new WumpusForm());
+            Application.Run(new WumpusStart());
         }
     }
 }
