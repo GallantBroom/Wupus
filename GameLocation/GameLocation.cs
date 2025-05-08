@@ -77,15 +77,15 @@ namespace GameLocation
         {
             if (PlayerLocation == WumpusSpawn)
             {
-                //GameLose();
+                GameLose();
             }
             else if (PlayerLocation == TrapSpawn)
             {
-                Traped();
+                Trapped();
             }
             else if (PlayerLocation == PitSpawn)
             {
-                //PitFall();
+                PitFall();
             }
         }
 
@@ -114,7 +114,7 @@ namespace GameLocation
         }
 
 
-        public void Traped()
+        public void Trapped()
         {
             Random random = new Random();
             Random rand = new Random();
@@ -144,7 +144,7 @@ namespace GameLocation
                 }
             }
             
-            //PlayerWasTrapped(NewPlayerLocation,NewTrapspawn);
+            PlayerWasTrapped(NewPlayerLocation,NewTrapspawn);
         }
 
 
