@@ -405,3 +405,4 @@ FodyWeavers.xsd
 /GameLocation/obj
 /WumpusTest/bin/Debug/WumpusTest.exe
 /WumpusTest/bin/Debug/WumpusTest.pdb
+/GameLocation/GameLocation.csproj.user
