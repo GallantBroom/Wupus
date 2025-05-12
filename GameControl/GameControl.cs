@@ -1,8 +1,11 @@
-﻿using System;
+﻿using High_Score;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UI;
+
 
 namespace GameControl
 {
@@ -19,8 +22,10 @@ namespace GameControl
         //start the game, go to the cave
         public void startGame()
         {
-           Game GameHappeningDLG = new Game();
+            WumpusStart StartMenuDLG = new WumpusStart();
 
+
+            StartMenuDLG.ShowDialog();
 
 
 
@@ -52,10 +57,17 @@ namespace GameControl
 
         
         
-        public void displayHighScores()
+        public string displayHighScores(string userName,string score, string position)
         {
+             
+            
+            UI.HighScore highScoreDLG = new UI.HighScore();
+            //display the splash screen, need to use the new variable name
+
+            highScoreDLG.ShowDialog();
 
 
+            return userName;
 
 
 
@@ -87,9 +99,27 @@ namespace GameControl
 
         public void playerWasTrapped(int newPlayerLocation, int trappedSpawned)
         {
-
+          
             
         }
+
+        public static int[] getConnectingRooms(int caveNumber, int currentRoom)
+        {
+            Cave.Cave cave1 = new Cave.Cave();
+            caveNumber = 1;
+            currentRoom = 1;
+
+            int [] cave = cave1.GiveCave(caveNumber,currentRoom);
+            
+
+
+
+
+
+            return cave;
+        }
+
+     
 
 
        

@@ -30,9 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WumpusStart));
             pictureBoxStartButton = new PictureBox();
-            pictureBox1 = new PictureBox();
+            pictureBoxHighScore = new PictureBox();
+            pictureBoxQuit = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBoxStartButton).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxHighScore).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxQuit).BeginInit();
             SuspendLayout();
             // 
             // pictureBoxStartButton
@@ -49,18 +51,33 @@
             pictureBoxStartButton.TabStop = false;
             pictureBoxStartButton.Click += pictureBoxStartButton_Click;
             // 
-            // pictureBox1
+            // pictureBoxHighScore
             // 
-            pictureBox1.BackColor = SystemColors.ControlLightLight;
-            pictureBox1.BackgroundImageLayout = ImageLayout.None;
-            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(380, 227);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(108, 45);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
+            pictureBoxHighScore.BackColor = SystemColors.ControlLightLight;
+            pictureBoxHighScore.BackgroundImageLayout = ImageLayout.None;
+            pictureBoxHighScore.BorderStyle = BorderStyle.FixedSingle;
+            pictureBoxHighScore.Image = (Image)resources.GetObject("pictureBoxHighScore.Image");
+            pictureBoxHighScore.Location = new Point(380, 213);
+            pictureBoxHighScore.Name = "pictureBoxHighScore";
+            pictureBoxHighScore.Size = new Size(108, 45);
+            pictureBoxHighScore.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxHighScore.TabIndex = 1;
+            pictureBoxHighScore.TabStop = false;
+            pictureBoxHighScore.Click += pictureBox1_Click;
+            // 
+            // pictureBoxQuit
+            // 
+            pictureBoxQuit.BackColor = SystemColors.ControlLightLight;
+            pictureBoxQuit.BackgroundImageLayout = ImageLayout.None;
+            pictureBoxQuit.BorderStyle = BorderStyle.FixedSingle;
+            pictureBoxQuit.Image = (Image)resources.GetObject("pictureBoxQuit.Image");
+            pictureBoxQuit.Location = new Point(380, 302);
+            pictureBoxQuit.Name = "pictureBoxQuit";
+            pictureBoxQuit.Size = new Size(108, 45);
+            pictureBoxQuit.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxQuit.TabIndex = 2;
+            pictureBoxQuit.TabStop = false;
+            pictureBoxQuit.Click += pictureBoxQuit_Click;
             // 
             // WumpusStart
             // 
@@ -68,20 +85,23 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 255, 128);
             ClientSize = new Size(933, 519);
-            Controls.Add(pictureBox1);
+            Controls.Add(pictureBoxQuit);
+            Controls.Add(pictureBoxHighScore);
             Controls.Add(pictureBoxStartButton);
             ForeColor = SystemColors.ControlText;
             Margin = new Padding(4, 3, 4, 3);
             Name = "WumpusStart";
             Text = "Escape The Wumpus";
             ((System.ComponentModel.ISupportInitialize)pictureBoxStartButton).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxHighScore).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxQuit).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private PictureBox pictureBoxStartButton;
-        private PictureBox pictureBox1;
+        private PictureBox pictureBoxHighScore;
+        private PictureBox pictureBoxQuit;
     }
 }
