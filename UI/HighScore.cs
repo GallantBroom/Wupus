@@ -21,6 +21,10 @@ namespace UI
 
         private void HighScore_Load(object sender, EventArgs e)
         {
+           
+           
+            
+          
 
 
 
