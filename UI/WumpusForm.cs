@@ -18,14 +18,26 @@ namespace UI
             InitializeComponent();
         }
 
-        
-private void pictureBoxStartButton_Click(object sender, EventArgs e)
+
+        private void pictureBoxStartButton_Click(object sender, EventArgs e)
         {
             this.Close();
-            
 
 
 
+
+
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pictureBoxQuit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

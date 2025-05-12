@@ -1,6 +1,6 @@
 ﻿namespace GameControl_Test
 {
-    partial class Form1
+    partial class FormgameControlTest
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,12 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            buttonReturnCave = new Button();
+            label1 = new Label();
+            SuspendLayout();
+            // 
+            // buttonReturnCave
+            // 
+            buttonReturnCave.Location = new Point(462, 158);
+            buttonReturnCave.Name = "buttonReturnCave";
+            buttonReturnCave.Size = new Size(150, 47);
+            buttonReturnCave.TabIndex = 0;
+            buttonReturnCave.Text = "Return Cave";
+            buttonReturnCave.UseVisualStyleBackColor = true;
+            buttonReturnCave.Click += buttonReturnCave_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(348, 225);
+            label1.Name = "label1";
+            label1.Size = new Size(38, 15);
+            label1.TabIndex = 1;
+            label1.Text = "label1";
+            // 
+            // FormgameControlTest
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(label1);
+            Controls.Add(buttonReturnCave);
+            Name = "FormgameControlTest";
+            Text = "Form1";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Button buttonReturnCave;
+        private Label label1;
     }
 }
