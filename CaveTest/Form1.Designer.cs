@@ -33,6 +33,7 @@
             buttonCave3 = new Button();
             buttonCave4 = new Button();
             buttonCave5 = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // buttonCave1
@@ -81,11 +82,21 @@
             buttonCave5.Text = "Cave 5";
             buttonCave5.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(72, 116);
+            label1.Name = "label1";
+            label1.Size = new Size(38, 15);
+            label1.TabIndex = 5;
+            label1.Text = "label1";
+            // 
             // FormCave
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label1);
             Controls.Add(buttonCave5);
             Controls.Add(buttonCave4);
             Controls.Add(buttonCave3);
@@ -95,6 +106,7 @@
             Text = "Cave";
             Load += FormCave_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -104,5 +116,6 @@
         private Button buttonCave3;
         private Button buttonCave4;
         private Button buttonCave5;
+        private Label label1;
     }
 }

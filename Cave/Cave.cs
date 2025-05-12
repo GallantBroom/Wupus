@@ -16,7 +16,7 @@
             {
                 //if (Cave1[roomNumber, i] != 0)
                 //{
-                //    dat.Add(Cave1[roomNumber, i]);
+                dat.Add(Cave1[roomNumber, i]);
                 //}                dat.Add(Cave1[roomNumber, i]);
             }
             return dat.ToArray();
