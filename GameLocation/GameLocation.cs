@@ -13,10 +13,10 @@ namespace GameLocation
     {
         public int PlayerLocation { get; set; }
         public int Cave { get; set; }
-
         public GameLocation()
         {
             // Constructor logic here
+
         }
         public int PlayerSpawn = 1;
         public int TrapSpawn = 0;
@@ -71,25 +71,44 @@ namespace GameLocation
             WumpusSpawn = Wumpusspawn;
             PitSpawn = Pitspawn;
         }
-
-
-        public void PlayerMove()
+        public enum Hazards
         {
+            Nothing,
+            Wumpus,
+            Trap,
+            Pit
+        }
+
+        public Hazards PlayerMove(int cave)
+        {
+            //I need more info
+            //I need which cave the player is moving to
+            //What do I need to do?
+            //I need to check if the player is hitting any hazards
+            //-Wumpus- Return "Landed on Wumpus"
+            //-Trap- Randomly move the player, and the trap, Return "Landed on Trap", Guarantee that the player or trap wont land on another hazard
+            //-Pit- Return "Landed on Pit"
+            //-Nothing- 
+
+            PlayerLocation = cave;
+
             if (PlayerLocation == WumpusSpawn)
             {
-                GameLose();
+                return Hazards.Wumpus;
             }
             else if (PlayerLocation == TrapSpawn)
             {
                 Trapped();
+                return Hazards.Trap;
             }
             else if (PlayerLocation == PitSpawn)
             {
-                PitFall();
+                return Hazards.Pit;
             }
+            return Hazards.Nothing;
         }
 
-        public int PullCave(int adg1, int adg2, int adg3)
+        public int GetCave(int adg1, int adg2, int adg3)
         {
             int Near = 0;
             if (adg1 == TrapSpawn || adg2 == TrapSpawn || adg3 == TrapSpawn)
@@ -114,7 +133,7 @@ namespace GameLocation
         }
 
 
-        public void Trapped()
+        private void Trapped()
         {
             Random random = new Random();
             Random rand = new Random();
@@ -144,7 +163,8 @@ namespace GameLocation
                 }
             }
             
-            PlayerWasTrapped(NewPlayerLocation,NewTrapspawn);
+            PlayerLocation = NewPlayerLocation;
+            TrapSpawn = NewTrapspawn;
         }
 
 
