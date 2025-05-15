@@ -14,21 +14,22 @@ namespace CaveTest
 
         private void button1_Click(object sender, EventArgs e)
         {
-            label1.Text = getConnectingRooms(1, 12); 
+            int[] cave = getConnectingRooms(int.Parse(textBoxCave.Text), int.Parse(textBoxRoomNumber.Text));
+            string s = string.Join(" ", cave);
+            textBoxConnectingRooms.Text = s;
         }
-        public static string getConnectingRooms(int caveNumber, int currentRoom)
+        public static int[] getConnectingRooms(int caveNumber, int currentRoom)
         {
             Cave.Cave cave1 = new Cave.Cave();
 
-            int[] cave = cave1.GiveCave(caveNumber, currentRoom);
-            string s = string.Join(" ", cave);
+            int[] cave = cave1.GiveCave(caveNumber - 1, currentRoom - 1);
 
 
 
 
 
 
-            return s;
+            return cave;
         }
     }
 }
