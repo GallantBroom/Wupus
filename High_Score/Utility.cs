@@ -10,31 +10,23 @@ namespace High_Score
 {
     internal class Utility
     {
-        public static bool IsDirty { get; set; }
         private static JsonSerializer serializer = new JsonSerializer();
 
-        public static void WriteToFile(High_Score[] stacks, string fileName)
+        public static void WriteToFile(List<PlayerScore> scores, string fileName)
         {
             StreamWriter streamWriter = new StreamWriter(fileName);
             serializer.Formatting = Formatting.Indented;
-
-            serializer.Serialize(streamWriter, stacks, typeof(High_Score[]));
+            serializer.Serialize(streamWriter, scores, typeof(List<PlayerScore>));
             streamWriter.Flush();
             streamWriter.Close();
         }
 
-        public static High_Score[] ReadFromFile(string fileName)
+        public static List<PlayerScore> ReadFromFile(string fileName)
         {
             StreamReader streamReader = new StreamReader(fileName);
-            var obj = serializer.Deserialize(streamReader, typeof(High_Score[]));
+            List<PlayerScore> list = (List<PlayerScore>)serializer.Deserialize(streamReader, typeof(List<PlayerScore>));
             streamReader.Close();
-            if (obj == null)
-            {
-                return new High_Score[10];
-            }
-
-            High_Score[] High_Scores = (High_Score[])obj;
-            return High_Scores;
+            return list;
         }
     }
 }

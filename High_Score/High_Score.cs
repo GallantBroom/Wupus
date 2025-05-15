@@ -14,9 +14,20 @@ namespace High_Score
         /// <summary>
         /// Making the constructor
         /// </summary>
-        public High_Score() { }
+        public High_Score()
+        {
+            FileInfo file = new FileInfo(SCORES);
+            if (file.Exists)
+            {
+                scores = Utility.ReadFromFile(SCORES);
+            }
+            else
+            {
+                scores = new List<PlayerScore>();
+            }
+        }
 
-        private List<PlayerScore> scores = new List<PlayerScore>();
+        private List<PlayerScore> scores;
         public List<PlayerScore> Scores 
         {
             get
@@ -34,6 +45,7 @@ namespace High_Score
             if (scores.Count < 10)
             {
                 scores.Add(playerScore);
+                Utility.WriteToFile(scores, SCORES);
             }
             else
             {
@@ -51,6 +63,7 @@ namespace High_Score
                 {
                     scores.RemoveAt(lowestScoreIndex);
                     scores.Add(playerScore);
+                    Utility.WriteToFile(scores, SCORES);
                 }
             }
 
