@@ -18,6 +18,12 @@ namespace High_Score
 
         public int Score {  get; set; }
         public string Name { get; set; }
-        public int CaveSystem { get; set; }  
+        public int CaveSystem { get; set; }
+
+        public override string ToString() 
+        { 
+           return $"{Name}\t {CaveSystem}\t {Score}";
+        }
+
     }
 }

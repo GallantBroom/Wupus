@@ -39,13 +39,14 @@ namespace High_Score
         const string SCORES = "scores.json";
        
 
-        public void AddScore(string name, int score, int caveSystem)
+        public bool AddScore(string name, int score, int caveSystem)
         {
             PlayerScore playerScore = new PlayerScore(name, score, caveSystem);
             if (scores.Count < 10)
             {
                 scores.Add(playerScore);
                 Utility.WriteToFile(scores, SCORES);
+                return true;
             }
             else
             {
@@ -64,8 +65,11 @@ namespace High_Score
                     scores.RemoveAt(lowestScoreIndex);
                     scores.Add(playerScore);
                     Utility.WriteToFile(scores, SCORES);
+                    return true;
                 }
             }
+
+            return false;
 
         }
 
@@ -78,7 +82,7 @@ namespace High_Score
             int finalScore = 100 - n + g + (5 * a) + w;
             return finalScore;
         }
-        
+
     }
 }
  
