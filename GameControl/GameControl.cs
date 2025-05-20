@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UI;
+
 
 
 namespace GameControl
@@ -22,10 +22,14 @@ namespace GameControl
         //start the game, go to the cave
         public void startGame()
         {
-            WumpusStart StartMenuDLG = new WumpusStart();
+            int cavenumber = 1;
 
 
-            StartMenuDLG.ShowDialog();
+
+            //Cave.Cave cave = new Cave.Cave();
+
+
+            getConnectingRooms(cavenumber,1);
 
 
 
@@ -61,10 +65,7 @@ namespace GameControl
         {
              
             
-            UI.HighScore highScoreDLG = new UI.HighScore();
-            //display the splash screen, need to use the new variable name
-
-            highScoreDLG.ShowDialog();
+           
 
 
             return userName;
@@ -106,17 +107,28 @@ namespace GameControl
         public static int[] getConnectingRooms(int caveNumber, int currentRoom)
         {
             Cave.Cave cave1 = new Cave.Cave();
-            caveNumber = 1;
-            currentRoom = 1;
 
-            int [] cave = cave1.GiveCave(caveNumber,currentRoom);
-            
+            int[] cave = cave1.GiveCave(caveNumber - 1, currentRoom - 1);
+
 
 
 
 
 
             return cave;
+        }
+
+       public static void playerMovesRooms()
+        {
+
+            
+
+            
+
+
+
+
+
         }
 
      
