@@ -9,6 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CaveTest\CaveTest.csproj" />
+    <ProjectReference Include="..\GameControl\GameControl.csproj" />
     <ProjectReference Include="..\High_Score\High_Score.csproj" />
   </ItemGroup>
 

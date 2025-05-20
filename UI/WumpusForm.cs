@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace UI
 {
     public partial class WumpusStart : Form
@@ -21,7 +22,14 @@ namespace UI
 
         private void pictureBoxStartButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            WumpusStart wem = new WumpusStart();
+            wem.Close();
+
+            Select_Cave SelectCaveDLG = new Select_Cave();
+
+            SelectCaveDLG.Show();
+
+
 
 
 
