@@ -75,7 +75,7 @@ namespace High_Score
         }    
 
         /// <summary>
-        /// Calculating the players score
+        /// Calculating the players score 
         /// </summary>
         private List<PlayerScore> _scores = new List<PlayerScore>();
         public int CalculateScore(int n, int g, int a, int w)
