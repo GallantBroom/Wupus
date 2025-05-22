@@ -39,7 +39,13 @@ namespace High_Score
 
         const string SCORES = "scores.json";
 
-
+        /// <summary>
+        /// Added Score to High Score list and displayed to listbox
+        /// </summary>
+        /// <param name="name">Player Name</param>
+        /// <param name="score">Game Score</param>
+        /// <param name="caveSystem"> Cave number used in game</param>
+        /// <returns>true if score was in the top 10</returns>
         public bool AddScore(string name, ulong score, int caveSystem)
         {
             PlayerScore playerScore = new PlayerScore(name, score, caveSystem);

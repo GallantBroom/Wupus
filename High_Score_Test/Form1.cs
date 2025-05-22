@@ -4,6 +4,9 @@ namespace High_Score_Test
 {
     public partial class Form1 : Form
     {
+        /// <summary>
+        /// Displaying High Score
+        /// </summary>
         public Form1()
         {
             InitializeComponent();
