@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic;
 using System.Linq.Expressions;
+using System.Net.Mail;
 using System.Reflection;
 using System.Runtime.ConstrainedExecution;
 using System.Runtime.InteropServices;
@@ -12,7 +13,7 @@ namespace High_Score
     {
 
         /// <summary>
-        /// Making the constructor
+        /// Reading form file 
         /// </summary>
         public High_Score()
         {
@@ -28,16 +29,16 @@ namespace High_Score
         }
 
         private List<PlayerScore> scores;
-        public List<PlayerScore> Scores 
+        public List<PlayerScore> Scores
         {
             get
             {
-                return scores.OrderByDescending(x => x.Score).ToList(); 
-            } 
+                return scores.OrderByDescending(x => x.Score).ToList();
+            }
         }
 
         const string SCORES = "scores.json";
-       
+
 
         public bool AddScore(string name, int score, int caveSystem)
         {
@@ -71,7 +72,7 @@ namespace High_Score
 
             return false;
 
-        }
+        }    
 
         /// <summary>
         /// Calculating the players score
@@ -82,7 +83,6 @@ namespace High_Score
             int finalScore = 100 - n + g + (5 * a) + w;
             return finalScore;
         }
-
     }
 }
  
