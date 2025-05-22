@@ -40,7 +40,7 @@ namespace High_Score
         const string SCORES = "scores.json";
 
 
-        public bool AddScore(string name, int score, int caveSystem)
+        public bool AddScore(string name, ulong score, int caveSystem)
         {
             PlayerScore playerScore = new PlayerScore(name, score, caveSystem);
             if (scores.Count < 10)
@@ -51,7 +51,7 @@ namespace High_Score
             }
             else
             {
-                int lowestScore = score;
+                ulong lowestScore = score;
                 int lowestScoreIndex = -1;
                 for (int i = 0; i < scores.Count; i++)
                 {
