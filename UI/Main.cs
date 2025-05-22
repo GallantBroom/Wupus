@@ -17,19 +17,27 @@ namespace UI
         {
             InitializeComponent();
         }
-        int cave = 1;
-        int currentroom = 10;
+        
 
-        
-        
+
+
 
 
         private void connectingRooms()
         {
-            GameControl.GameControl gamecontrol = new GameControl.GameControl();
-            int[] connectingRooms = GameControl.GameControl.getConnectingRooms(cave, currentroom);
+            buttonEast.Enabled = false;
+            buttonNorthEast.Enabled = false;
+            buttonSouthEast.Enabled = false;
+            buttonNorthWest.Enabled = false;
+            buttonWest.Enabled = false;
+            buttonSouthWest.Enabled = false;
 
-            int[] freePathways = UI.enablePossiblePathways(currentroom, connectingRooms);
+            int cave = int.Parse(textBoxCaveNumber.Text);
+            int room = int.Parse(textBoxRoomNumber.Text);
+            GameControl.GameControl gamecontrol = new GameControl.GameControl();
+            int[] connectingRooms = GameControl.GameControl.getConnectingRooms(cave, room);
+
+            int[] freePathways = UI.findCorrectDirection(connectingRooms, room);
 
 
 
@@ -37,37 +45,37 @@ namespace UI
             {
 
 
-                if (freePathways[i] == 0)
+                if (freePathways[i] == 1)
                 {
                     buttonNorthWest.Enabled = true;
 
                 }
 
-                else if (freePathways[i] == 1)
+                else if (freePathways[i] == 2)
                 {
 
                     buttonNorthEast.Enabled = true;
 
                 }
-                else if (freePathways[i] == 5)
+                else if (freePathways[i] == 6)
                 {
 
                     buttonWest.Enabled = true;
                 }
 
-                else if ((freePathways[i] == 2))
+                else if ((freePathways[i] == 3))
                 {
 
 
                     buttonEast.Enabled = true;
                 }
 
-                else if (freePathways[i] == 3)
+                else if (freePathways[i] == 4)
                 {
                     buttonSouthEast.Enabled = true;
 
                 }
-                else if (((freePathways[i] == 4)))
+                else if (((freePathways[i] == 5)))
                 {
 
                     buttonSouthWest.Enabled = true;
@@ -82,7 +90,7 @@ namespace UI
         private void newPlayerLocation()
         {
 
-            
+
 
         }
 
@@ -91,7 +99,7 @@ namespace UI
         private void Main_Load(object sender, EventArgs e)
         {
 
-            connectingRooms();
+            //connectingRooms();
 
 
 
@@ -104,49 +112,54 @@ namespace UI
 
         private void buttonNorthEast_Click(object sender, EventArgs e)
         {
-            
-            currentroom -= 5;
+
+            //currentroom -= 5;
             connectingRooms();
         }
 
         private void buttonEast_Click(object sender, EventArgs e)
         {
 
-            if (currentroom == 6 || currentroom == 12 || currentroom == 18 || currentroom == 24 || currentroom == 30){currentroom += 5;}
+            //if (currentroom == 6 || currentroom == 12 || currentroom == 18 || currentroom == 24 || currentroom == 30) { currentroom += 5; }
 
-            else { currentroom += 1; }
+            //else { currentroom += 1; }
 
             connectingRooms();
-            
+
         }
 
         private void buttonSouthEast_Click(object sender, EventArgs e)
         {
-            currentroom += 6;
+            //currentroom += 6;
             connectingRooms();
         }
 
         private void buttonSouthWest_Click(object sender, EventArgs e)
         {
-            currentroom += 5;
+            //currentroom += 5;
             connectingRooms();
         }
 
         private void buttonWest_Click(object sender, EventArgs e)
         {
-            if (currentroom == 1 || currentroom == 7 || currentroom == 13 || currentroom == 19 || currentroom == 25)
-            {
-                currentroom += 5;
+            ///if (currentroom == 1 || currentroom == 7 || currentroom == 13 || currentroom == 19 || currentroom == 25)
+            //{
+                //currentroom += 5;
 
-            }
-            else { currentroom -= 1; }
-            
+            //}
+            //else { currentroom -= 1; }
+
             connectingRooms();
         }
 
         private void buttonNorthWest_Click(object sender, EventArgs e)
         {
-            currentroom -= 6;
+            //currentroom -= 6;
+            connectingRooms();
+        }
+
+        private void buttonCalculateRoomDirections_Click(object sender, EventArgs e)
+        {
             connectingRooms();
         }
     }

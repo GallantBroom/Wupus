@@ -34,6 +34,11 @@
             buttonSouthEast = new Button();
             buttonEast = new Button();
             buttonWest = new Button();
+            label1 = new Label();
+            textBoxCaveNumber = new TextBox();
+            textBoxRoomNumber = new TextBox();
+            label2 = new Label();
+            buttonCalculateRoomDirections = new Button();
             SuspendLayout();
             // 
             // buttonNorthEast
@@ -102,11 +107,58 @@
             buttonWest.UseVisualStyleBackColor = true;
             buttonWest.Click += buttonWest_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(320, 120);
+            label1.Name = "label1";
+            label1.Size = new Size(78, 15);
+            label1.TabIndex = 7;
+            label1.Text = "Cave number";
+            // 
+            // textBoxCaveNumber
+            // 
+            textBoxCaveNumber.Location = new Point(427, 117);
+            textBoxCaveNumber.Name = "textBoxCaveNumber";
+            textBoxCaveNumber.Size = new Size(100, 23);
+            textBoxCaveNumber.TabIndex = 8;
+            // 
+            // textBoxRoomNumber
+            // 
+            textBoxRoomNumber.Location = new Point(427, 174);
+            textBoxRoomNumber.Name = "textBoxRoomNumber";
+            textBoxRoomNumber.Size = new Size(100, 23);
+            textBoxRoomNumber.TabIndex = 10;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(320, 177);
+            label2.Name = "label2";
+            label2.Size = new Size(84, 15);
+            label2.TabIndex = 9;
+            label2.Text = "Room number";
+            // 
+            // buttonCalculateRoomDirections
+            // 
+            buttonCalculateRoomDirections.Location = new Point(320, 245);
+            buttonCalculateRoomDirections.Name = "buttonCalculateRoomDirections";
+            buttonCalculateRoomDirections.Size = new Size(158, 23);
+            buttonCalculateRoomDirections.TabIndex = 11;
+            buttonCalculateRoomDirections.Text = "Calculate room directions";
+            buttonCalculateRoomDirections.UseVisualStyleBackColor = true;
+            buttonCalculateRoomDirections.Click += buttonCalculateRoomDirections_Click;
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(buttonCalculateRoomDirections);
+            Controls.Add(textBoxRoomNumber);
+            Controls.Add(label2);
+            Controls.Add(textBoxCaveNumber);
+            Controls.Add(label1);
             Controls.Add(buttonWest);
             Controls.Add(buttonEast);
             Controls.Add(buttonSouthEast);
@@ -117,6 +169,7 @@
             Text = "Main";
             Load += Main_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -127,5 +180,10 @@
         private Button buttonSouthEast;
         private Button buttonEast;
         private Button buttonWest;
+        private Label label1;
+        private TextBox textBoxCaveNumber;
+        private TextBox textBoxRoomNumber;
+        private Label label2;
+        private Button buttonCalculateRoomDirections;
     }
 }

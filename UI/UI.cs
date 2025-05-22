@@ -20,99 +20,152 @@ namespace UI
 
 
         
-        }  
-
-
-        public static int[] enablePossiblePathways(int currentRoom, int[] connectedrooms)
-        {
-            int[] abledPathways = new int[3];
-            int[] direction = new int[3];
-            if (currentRoom != 1 && currentRoom != 7 && currentRoom != 13 && currentRoom != 19 && currentRoom != 25 && currentRoom != 6 && currentRoom != 12 && currentRoom != 18 && currentRoom != 24 && currentRoom != 30)
-            {
-                for (int i = 0; i < connectedrooms.Length; i++)
-                {
-                    abledPathways[i] = connectedrooms[i] - currentRoom;
-
-                    if (abledPathways[i] == -6 || abledPathways[i] == 23 || abledPathways[i] == 29)
-                    {
-
-                        direction[i] = 0;
-                    }
-                    if (abledPathways[i] == -5 || abledPathways[i] == -11 || abledPathways[i] == 24)
-                    {
-
-                        direction[i] = 1;
-                    }
-                    if (abledPathways[i] == 1)
-                    {
-
-                        direction[i] = 2;
-                    }
-                    if (abledPathways[i] == 6 || abledPathways[i] == -23 || abledPathways[i] == -29)
-                    {
-
-                        direction[i] = 3;
-                    }
-                    if (abledPathways[i] == 5 || abledPathways[i] == -24 || abledPathways[i] == 11)
-                    {
-
-                        direction[i] = 4;
-                    }
-                    if (abledPathways[i] == -1)
-                    {
-
-                        direction[i] = 5;
-                    }
-                }
-
-
-                return direction;
-            }
-            else
-            {
-                for (int i = 0; i < connectedrooms.Length; i++)
-                {
-                    abledPathways[i] = connectedrooms[i] - currentRoom;
-
-                    if (abledPathways[i] == -6 || abledPathways[i] == 23 || abledPathways[i] == 29)
-                    {
-
-                        direction[i] = 0;
-                    }
-                    if (abledPathways[i] == -11 || abledPathways[i] == 24)
-                    {
-
-                        direction[i] = 1;
-                    }
-                    if (abledPathways[i] == -5)
-                    {
-
-                        direction[i] = 2;
-                    }
-                    if (abledPathways[i] == 6 || abledPathways[i] == -23 || abledPathways[i] == -29)
-                    {
-
-                        direction[i] = 3;
-                    }
-                    if (abledPathways[i] == -24 || abledPathways[i] == 11)
-                    {
-
-                        direction[i] = 4;
-                    }
-                    if (abledPathways[i] == 5)
-                    {
-
-                        direction[i] = 5;
-                    }
-                }
-
-
-                return direction;
-
-
-            }
-            
         }
+
+
+        public static int[] findCorrectDirection(int[] connectingRooms, int currentRoom)
+        {
+            int[] ablePathways = new int[connectingRooms.Length];
+            int[] directions = new int[connectingRooms.Length];
+
+
+
+            for (int i = 0; i < connectingRooms.Length; i++)
+            {
+                ablePathways[i] = connectingRooms[i] - currentRoom;
+
+                if (ablePathways[i] == 29)
+                {
+                    directions[i] = 1;
+
+                }
+                else
+                {
+                    if (ablePathways[i] == 5 || ablePathways[i] == -5)
+                    {
+                        for (int k = 1; k < 26; k += 6)
+                        {
+
+                            if (currentRoom == k)
+                            {
+
+
+                                if (ablePathways[i] == 5)
+                                {
+                                    directions[i] = 6;
+                                    break;
+
+                                }
+
+                            }
+                            else if (currentRoom != k && ablePathways[i] == 5)
+                            {
+                                directions[i] = 5;
+                            }
+
+                        }
+
+                        for (int j = 6; j < 30; j += 6)
+                        {
+
+                            if (currentRoom == j)
+                            {
+
+                                if (ablePathways[i] == -5)
+                                {
+                                    directions[i] = 3;
+
+                                }
+
+                            }
+                            else if (currentRoom != j && ablePathways[i] == -5)
+
+                            {
+                                directions[i] = 2;
+                            }
+
+                        }
+
+                    }
+
+                    else if (ablePathways[i] == -6 || ablePathways[i] == 23 || ablePathways[i] == 29)
+                    {
+
+                        directions[i] = 1;
+                    }
+                    else if (ablePathways[i] == 1)
+                    {
+
+                        directions[i] = 3;
+                    }
+                    else if (ablePathways[i] == 6)
+                    {
+
+                        directions[i] = 4;
+                    }
+                    else if (ablePathways[i] == -1)
+                    {
+
+                        directions[i] = 6;
+
+                    }
+
+                }
+
+
+
+
+
+
+            }
+
+
+            return directions;
+        }
+
+        public static int findNewRoom(int currentRoom, int pathwaySelected)
+        {
+
+
+            if (pathwaySelected == 1)
+            {
+
+
+                currentRoom -= 6;
+            }
+            else if (pathwaySelected == 2)
+            {
+
+                currentRoom -= 5;
+            }
+            else if (pathwaySelected == 3)
+            {
+
+                currentRoom += 1;
+            }
+            else if (pathwaySelected == 4)
+            {
+
+                currentRoom += 6;
+            }
+            else if (pathwaySelected == 5)
+            {
+
+                currentRoom += 5;
+            }
+            else if (pathwaySelected == 6)
+            {
+                currentRoom -= 1;
+            }
+
+
+
+
+
+
+            return currentRoom;
+        }
+
 
 
 
