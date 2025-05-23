@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{A42B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cave", "Cave\Cave.csproj", "{707DD2DF-1F13-44A7-AC94-439C845B09D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "High_Score_Test", "High_Score_Test\High_Score_Test.csproj", "{53BED090-8BB6-43B2-84B2-D3CFB8345F60}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Player", "Player\Player.csproj", "{B40622BF-BC7F-47C2-AB89-9B9E45B0ED71}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameLocationTest2", "GameLocationTest2\GameLocationTest2.csproj", "{F94D45AC-147B-4A12-A813-8924072A84EA}"
@@ -55,14 +57,6 @@ Global
 		{707DD2DF-1F13-44A7-AC94-439C845B09D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{707DD2DF-1F13-44A7-AC94-439C845B09D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{707DD2DF-1F13-44A7-AC94-439C845B09D1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B40622BF-BC7F-47C2-AB89-9B9E45B0ED71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B40622BF-BC7F-47C2-AB89-9B9E45B0ED71}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B40622BF-BC7F-47C2-AB89-9B9E45B0ED71}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B40622BF-BC7F-47C2-AB89-9B9E45B0ED71}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F94D45AC-147B-4A12-A813-8924072A84EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F94D45AC-147B-4A12-A813-8924072A84EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F94D45AC-147B-4A12-A813-8924072A84EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F94D45AC-147B-4A12-A813-8924072A84EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

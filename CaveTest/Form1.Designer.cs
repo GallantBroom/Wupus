@@ -29,80 +29,101 @@
         private void InitializeComponent()
         {
             buttonCave1 = new Button();
-            buttonCave2 = new Button();
-            buttonCave3 = new Button();
-            buttonCave4 = new Button();
-            buttonCave5 = new Button();
+            label1 = new Label();
+            textBoxCave = new TextBox();
+            labelCave = new Label();
+            label2 = new Label();
+            textBoxRoomNumber = new TextBox();
+            textBoxConnectingRooms = new TextBox();
             SuspendLayout();
             // 
             // buttonCave1
             // 
-            buttonCave1.Location = new Point(72, 213);
+            buttonCave1.Location = new Point(381, 187);
             buttonCave1.Name = "buttonCave1";
-            buttonCave1.Size = new Size(75, 23);
+            buttonCave1.Size = new Size(218, 23);
             buttonCave1.TabIndex = 0;
-            buttonCave1.Text = "Cave 1";
+            buttonCave1.Text = "Calculate Connecting Rooms";
             buttonCave1.UseVisualStyleBackColor = true;
             buttonCave1.Click += button1_Click;
             // 
-            // buttonCave2
+            // label1
             // 
-            buttonCave2.Location = new Point(192, 213);
-            buttonCave2.Name = "buttonCave2";
-            buttonCave2.Size = new Size(75, 23);
-            buttonCave2.TabIndex = 1;
-            buttonCave2.Text = "Cave 2";
-            buttonCave2.UseVisualStyleBackColor = true;
+            label1.AutoSize = true;
+            label1.Location = new Point(480, 74);
+            label1.Name = "label1";
+            label1.Size = new Size(109, 15);
+            label1.TabIndex = 5;
+            label1.Text = "Connecting Rooms";
             // 
-            // buttonCave3
+            // textBoxCave
             // 
-            buttonCave3.Location = new Point(332, 213);
-            buttonCave3.Name = "buttonCave3";
-            buttonCave3.Size = new Size(75, 23);
-            buttonCave3.TabIndex = 2;
-            buttonCave3.Text = "Cave 3";
-            buttonCave3.UseVisualStyleBackColor = true;
+            textBoxCave.Location = new Point(307, 71);
+            textBoxCave.Name = "textBoxCave";
+            textBoxCave.Size = new Size(100, 23);
+            textBoxCave.TabIndex = 6;
             // 
-            // buttonCave4
+            // labelCave
             // 
-            buttonCave4.Location = new Point(451, 213);
-            buttonCave4.Name = "buttonCave4";
-            buttonCave4.Size = new Size(75, 23);
-            buttonCave4.TabIndex = 3;
-            buttonCave4.Text = "Cave 4";
-            buttonCave4.UseVisualStyleBackColor = true;
+            labelCave.AutoSize = true;
+            labelCave.Location = new Point(207, 74);
+            labelCave.Name = "labelCave";
+            labelCave.Size = new Size(80, 15);
+            labelCave.TabIndex = 7;
+            labelCave.Text = "Cave Number";
             // 
-            // buttonCave5
+            // label2
             // 
-            buttonCave5.Location = new Point(602, 213);
-            buttonCave5.Name = "buttonCave5";
-            buttonCave5.Size = new Size(75, 23);
-            buttonCave5.TabIndex = 4;
-            buttonCave5.Text = "Cave 5";
-            buttonCave5.UseVisualStyleBackColor = true;
+            label2.AutoSize = true;
+            label2.Location = new Point(207, 119);
+            label2.Name = "label2";
+            label2.Size = new Size(86, 15);
+            label2.TabIndex = 9;
+            label2.Text = "Room Number";
+            // 
+            // textBoxRoomNumber
+            // 
+            textBoxRoomNumber.Location = new Point(306, 116);
+            textBoxRoomNumber.Name = "textBoxRoomNumber";
+            textBoxRoomNumber.Size = new Size(100, 23);
+            textBoxRoomNumber.TabIndex = 8;
+            // 
+            // textBoxConnectingRooms
+            // 
+            textBoxConnectingRooms.Location = new Point(610, 71);
+            textBoxConnectingRooms.Name = "textBoxConnectingRooms";
+            textBoxConnectingRooms.ReadOnly = true;
+            textBoxConnectingRooms.Size = new Size(57, 23);
+            textBoxConnectingRooms.TabIndex = 10;
+            textBoxConnectingRooms.Text = "0, 0, 0";
             // 
             // FormCave
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(buttonCave5);
-            Controls.Add(buttonCave4);
-            Controls.Add(buttonCave3);
-            Controls.Add(buttonCave2);
+            Controls.Add(textBoxConnectingRooms);
+            Controls.Add(label2);
+            Controls.Add(textBoxRoomNumber);
+            Controls.Add(labelCave);
+            Controls.Add(textBoxCave);
+            Controls.Add(label1);
             Controls.Add(buttonCave1);
             Name = "FormCave";
             Text = "Cave";
             Load += FormCave_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Button buttonCave1;
-        private Button buttonCave2;
-        private Button buttonCave3;
-        private Button buttonCave4;
-        private Button buttonCave5;
+        private Label label1;
+        private TextBox textBoxCave;
+        private Label labelCave;
+        private Label label2;
+        private TextBox textBoxRoomNumber;
+        private TextBox textBoxConnectingRooms;
     }
 }
