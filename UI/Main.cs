@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Cave;
+using CaveTest;
+using GameControl;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,10 +19,24 @@ namespace UI
         public Main()
         {
             InitializeComponent();
+
+        }
+
+        GameControl.GameControl gamecontrol = new GameControl.GameControl();
+
+
+        private void warnUser()
+        {
+            int[] connectingRooms = GameControl.GameControl.getConnectingRooms(2, 12);
+
+            int[] hazards = gamecontrol.giveUIHazards();
+
+           
+
+
+
         }
         
-
-
 
 
 
@@ -34,10 +51,10 @@ namespace UI
 
             int cave = int.Parse(textBoxCaveNumber.Text);
             int room = int.Parse(textBoxRoomNumber.Text);
-            GameControl.GameControl gamecontrol = new GameControl.GameControl();
             int[] connectingRooms = GameControl.GameControl.getConnectingRooms(cave, room);
 
             int[] freePathways = UI.findCorrectDirection(connectingRooms, room);
+
 
 
 
@@ -87,12 +104,7 @@ namespace UI
             }
         }
 
-        private void newPlayerLocation()
-        {
 
-
-
-        }
 
 
 
@@ -144,7 +156,7 @@ namespace UI
         {
             ///if (currentroom == 1 || currentroom == 7 || currentroom == 13 || currentroom == 19 || currentroom == 25)
             //{
-                //currentroom += 5;
+            //currentroom += 5;
 
             //}
             //else { currentroom -= 1; }
@@ -161,6 +173,16 @@ namespace UI
         private void buttonCalculateRoomDirections_Click(object sender, EventArgs e)
         {
             connectingRooms();
+        }
+
+        private void pictureBoxCoin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelHints_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -123,49 +123,7 @@ namespace UI
             return directions;
         }
 
-        public static int findNewRoom(int currentRoom, int pathwaySelected)
-        {
-
-
-            if (pathwaySelected == 1)
-            {
-
-
-                currentRoom -= 6;
-            }
-            else if (pathwaySelected == 2)
-            {
-
-                currentRoom -= 5;
-            }
-            else if (pathwaySelected == 3)
-            {
-
-                currentRoom += 1;
-            }
-            else if (pathwaySelected == 4)
-            {
-
-                currentRoom += 6;
-            }
-            else if (pathwaySelected == 5)
-            {
-
-                currentRoom += 5;
-            }
-            else if (pathwaySelected == 6)
-            {
-                currentRoom -= 1;
-            }
-
-
-
-
-
-
-            return currentRoom;
-        }
-
+       
 
 
 
