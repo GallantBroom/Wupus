@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -52,12 +53,7 @@ namespace GameControl
 
 
         }
-        //the game is puased, make sure that the pause menu is played
-        public void PauseGame()
-        {
-
-            
-        }
+        
 
         
         
@@ -82,17 +78,22 @@ namespace GameControl
 
         }
 
-        public void displayCurrentRoom()
+        
+        public int[] giveUIHazards()
         {
 
+            GameLocation.GameLocation gameLocation = new GameLocation.GameLocation();
+            Cave.Cave cave = new Cave.Cave();
 
 
 
-        }
-        public void pitFall()
-        {
+            //int[] hazards = gameLocation.Spawn();
+            int[] hazards = { 0, 0, 0 };
+            
 
 
+            return hazards;
+            
 
 
 

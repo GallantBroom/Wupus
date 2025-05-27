@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             buttonNorthEast = new Button();
             buttonSouthWest = new Button();
             buttonNorthWest = new Button();
@@ -39,6 +40,9 @@
             textBoxRoomNumber = new TextBox();
             label2 = new Label();
             buttonCalculateRoomDirections = new Button();
+            pictureBoxCoin = new PictureBox();
+            labelHints = new Label();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxCoin).BeginInit();
             SuspendLayout();
             // 
             // buttonNorthEast
@@ -110,7 +114,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(320, 120);
+            label1.Location = new Point(294, 279);
             label1.Name = "label1";
             label1.Size = new Size(78, 15);
             label1.TabIndex = 7;
@@ -118,14 +122,14 @@
             // 
             // textBoxCaveNumber
             // 
-            textBoxCaveNumber.Location = new Point(427, 117);
+            textBoxCaveNumber.Location = new Point(401, 276);
             textBoxCaveNumber.Name = "textBoxCaveNumber";
             textBoxCaveNumber.Size = new Size(100, 23);
             textBoxCaveNumber.TabIndex = 8;
             // 
             // textBoxRoomNumber
             // 
-            textBoxRoomNumber.Location = new Point(427, 174);
+            textBoxRoomNumber.Location = new Point(401, 333);
             textBoxRoomNumber.Name = "textBoxRoomNumber";
             textBoxRoomNumber.Size = new Size(100, 23);
             textBoxRoomNumber.TabIndex = 10;
@@ -133,7 +137,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(320, 177);
+            label2.Location = new Point(294, 336);
             label2.Name = "label2";
             label2.Size = new Size(84, 15);
             label2.TabIndex = 9;
@@ -141,7 +145,7 @@
             // 
             // buttonCalculateRoomDirections
             // 
-            buttonCalculateRoomDirections.Location = new Point(320, 245);
+            buttonCalculateRoomDirections.Location = new Point(294, 404);
             buttonCalculateRoomDirections.Name = "buttonCalculateRoomDirections";
             buttonCalculateRoomDirections.Size = new Size(158, 23);
             buttonCalculateRoomDirections.TabIndex = 11;
@@ -149,11 +153,35 @@
             buttonCalculateRoomDirections.UseVisualStyleBackColor = true;
             buttonCalculateRoomDirections.Click += buttonCalculateRoomDirections_Click;
             // 
+            // pictureBoxCoin
+            // 
+            pictureBoxCoin.BackgroundImage = (Image)resources.GetObject("pictureBoxCoin.BackgroundImage");
+            pictureBoxCoin.BackgroundImageLayout = ImageLayout.Center;
+            pictureBoxCoin.Location = new Point(452, 36);
+            pictureBoxCoin.Name = "pictureBoxCoin";
+            pictureBoxCoin.Size = new Size(37, 16);
+            pictureBoxCoin.TabIndex = 12;
+            pictureBoxCoin.TabStop = false;
+            pictureBoxCoin.Visible = false;
+            pictureBoxCoin.Click += pictureBoxCoin_Click;
+            // 
+            // labelHints
+            // 
+            labelHints.AutoSize = true;
+            labelHints.Location = new Point(359, 36);
+            labelHints.Name = "labelHints";
+            labelHints.Size = new Size(30, 15);
+            labelHints.TabIndex = 13;
+            labelHints.Text = "Hint";
+            labelHints.Click += labelHints_Click;
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(labelHints);
+            Controls.Add(pictureBoxCoin);
             Controls.Add(buttonCalculateRoomDirections);
             Controls.Add(textBoxRoomNumber);
             Controls.Add(label2);
@@ -168,6 +196,7 @@
             Name = "Main";
             Text = "Main";
             Load += Main_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBoxCoin).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -185,5 +214,7 @@
         private TextBox textBoxRoomNumber;
         private Label label2;
         private Button buttonCalculateRoomDirections;
+        private PictureBox pictureBoxCoin;
+        private Label labelHints;
     }
 }
