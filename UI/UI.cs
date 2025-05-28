@@ -11,6 +11,7 @@ namespace UI
     {
         public int currentRoom;
         public int[] connectedRooms;
+        
        public UI(int currentroom, int[] connectedrooms ) { 
             
             currentRoom = currentroom;
@@ -88,7 +89,7 @@ namespace UI
 
                     }
 
-                    else if (ablePathways[i] == -6 || ablePathways[i] == 23 || ablePathways[i] == 29)
+                    else if (ablePathways[i] == 6 || ablePathways[i] == -23 || ablePathways[i] == -29)
                     {
 
                         directions[i] = 1;
@@ -108,6 +109,11 @@ namespace UI
 
                         directions[i] = 6;
 
+                    }
+                    else if (ablePathways[i] == -11)
+                    {
+
+                        directions[i] = 2;
                     }
 
                 }

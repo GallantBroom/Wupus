@@ -12,8 +12,8 @@ namespace GameControl
 {
     public class GameControl
     {
-        
 
+        public bool isPlayerTrapped = false;
 
         public GameControl() { 
         
@@ -79,17 +79,17 @@ namespace GameControl
         }
 
         
-        public int[] giveUIHazards()
+        public int[] giveUIHazards(int[] connectingRooms)
         {
 
             GameLocation.GameLocation gameLocation = new GameLocation.GameLocation();
-            Cave.Cave cave = new Cave.Cave();
+
+            int[] hazards = gameLocation.GetCave(connectingRooms[0], connectingRooms[1], connectingRooms[2]);
 
 
 
-            //int[] hazards = gameLocation.Spawn();
-            int[] hazards = { 0, 0, 0 };
-            
+
+
 
 
             return hazards;
@@ -99,10 +99,34 @@ namespace GameControl
 
         }
 
-        public void playerWasTrapped(int newPlayerLocation, int trappedSpawned)
+        public int playerWasTrapped(int cave,int room)
         {
-          
-            
+            GameLocation.GameLocation gameLocation = new GameLocation.GameLocation();
+            if (gameLocation.PlayerMove(cave) == GameLocation.GameLocation.Hazards.Trap)
+            {
+                //i need to tell UI to move the player to a different room 
+               
+                room = gameLocation.PlayerLocation;
+                isPlayerTrapped = true;
+
+
+
+
+
+
+            }
+            else if(gameLocation.PlayerMove(cave) == GameLocation.GameLocation.Hazards.Wumpus)
+            {
+                
+            }
+            else if (gameLocation.PlayerMove(cave) == GameLocation.GameLocation.Hazards.Pit)
+            {
+                GameLose();
+                
+            }
+
+            return room;
+
         }
 
         public static int[] getConnectingRooms(int caveNumber, int currentRoom)
