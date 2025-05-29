@@ -1,4 +1,5 @@
-﻿using High_Score;
+﻿using GameLocation;
+using High_Score;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,8 @@ namespace GameControl
 {
     public class GameControl
     {
+
+        High_Score.High_Score highscore = new High_Score.High_Score();
         
 
 
@@ -59,23 +62,31 @@ namespace GameControl
         
         public string displayHighScores(string userName,string score, string position)
         {
-             
+
+
             
-           
+
+
+
+
+
+
+
 
 
             return userName;
 
-
-
         }
         
-        public void displaySplashScreen()
+        public int[] giveHintsToUI()
         {
+            GameLocation.GameLocation gameLocation = new GameLocation.GameLocation();
+            int[] near = gameLocation.GetCave(6, 30, 2);
+
+            
 
 
-
-
+            return near;
         }
 
         

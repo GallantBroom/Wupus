@@ -75,6 +75,7 @@
             labelName.Size = new Size(66, 30);
             labelName.TabIndex = 1;
             labelName.Text = "Name";
+            labelName.Click += labelName_Click;
             // 
             // labelScore
             // 

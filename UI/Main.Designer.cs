@@ -168,7 +168,7 @@
             // labelHints
             // 
             labelHints.AutoSize = true;
-            labelHints.Location = new Point(359, 36);
+            labelHints.Location = new Point(303, 36);
             labelHints.Name = "labelHints";
             labelHints.Size = new Size(30, 15);
             labelHints.TabIndex = 13;
