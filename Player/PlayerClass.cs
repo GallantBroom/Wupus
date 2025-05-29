@@ -40,14 +40,21 @@ namespace Player
         {
             if (killedWumpus)
             {
-                return ((Arrows * 10) - Turns) + 1000;
+                return ((Arrows * 10) - Turns + Coins) + 1000;
             }
             else
             {
-                return (Arrows * 10) - Turns;
+                return (Arrows * 10) - Turns + Coins;
             }
             
         }
-        
+        public void AddCoin()
+        {
+            Coins++;
+        }
+        public int GetCoins()
+        {
+            return Coins;
+        }
     }
 }
