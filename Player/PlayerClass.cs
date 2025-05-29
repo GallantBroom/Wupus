@@ -4,15 +4,20 @@ using System.Diagnostics.PerformanceData;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GameLocation;
 
 namespace Player
 {
+    
     public class PlayerClass
     {
+        
+        GameLocation.GameLocation gameLocation = new GameLocation.GameLocation();
         public int Arrows { get; set; }
         public int Coins { get; set; }
         public int Turns { get; set; }
         public int[] inv { get; set; }
+
 
         public PlayerClass()
         {
@@ -28,9 +33,21 @@ namespace Player
         public int PlayerMove()
         {
             Turns++;
-            Coins++;
             return Turns;
         }
 
+        public int GetScore(bool killedWumpus)
+        {
+            if (killedWumpus)
+            {
+                return ((Arrows * 10) - Turns) + 1000;
+            }
+            else
+            {
+                return (Arrows * 10) - Turns;
+            }
+            
+        }
+        
     }
 }

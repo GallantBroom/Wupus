@@ -12,6 +12,7 @@ namespace GameLocation
 {
     public class GameLocation
     {
+        
         public int PlayerLocation { get; set; }
         public int Cave { get; set; }
         public GameLocation()
@@ -52,187 +53,20 @@ namespace GameLocation
             PitSpawn3 = values[6];
             Values = values;
             return Values;
+        }
 
-            //Random random = new Random();
-            //int Trapspawn = random.Next(2, 30);
-            //int Trapspawn2 = random.Next(2, 30);
-            //int Trapspawn3 = random.Next(2, 30);
-            //int Wumpusspawn = random.Next(2, 30);
-            //int Pitspawn = random.Next(2, 30);
-            //int Pitspawn2 = random.Next(2, 30);
-            //int Pitspawn3 = random.Next(2, 30);
-            //while (Wumpusspawn == Trapspawn || Trapspawn == Pitspawn || Wumpusspawn == Pitspawn ||
-            //    Wumpusspawn == Trapspawn2 || Wumpusspawn == Trapspawn3 || Wumpusspawn == Pitspawn2 ||
-            //    Wumpusspawn == Pitspawn3 || Trapspawn == Pitspawn2 || Trapspawn == Pitspawn3 || Trapspawn2 == Pitspawn ||
-            //    Trapspawn3 == Pitspawn || Trapspawn2 == Pitspawn2 || Trapspawn2 == Pitspawn3 || Trapspawn3 == Pitspawn2 || Pitspawn == Pitspawn2 || Pitspawn == Pitspawn3 || Pitspawn2 == Pitspawn3)
-            //{
-            //    if (Wumpusspawn == Trapspawn)
-            //    {
-            //        if (Wumpusspawn != 30)
-            //        {
-            //            Wumpusspawn += 1;
-            //        }
-            //        else
-            //        {
-            //            Wumpusspawn = 2;
-            //        }
-            //    }
-            //    else if (Trapspawn == Pitspawn)
-            //    {
-            //        if (Pitspawn != 30)
-            //        {
-            //            Pitspawn += 1;
-            //        }
-            //        else
-            //        {
-            //            Pitspawn = 2;
-            //        }
+        public int[] SpawnCoins()
+        {
+            Random random = new Random();
+            HashSet<int> usedNumbers = new HashSet<int>();
 
-            //    }
-            //    else if (Wumpusspawn == Pitspawn)
-            //    {
-            //        if (Wumpusspawn != 30)
-            //        {
-            //            Wumpusspawn += 1;
-            //        }
-            //        else
-            //        {
-            //            Wumpusspawn = 2;
-            //        }
-
-            //    }
-            //    else if (Wumpusspawn == Trapspawn2)
-            //    {
-            //        if (Wumpusspawn != 30)
-            //        {
-            //            Wumpusspawn += 1;
-            //        }
-            //        else
-            //        {
-            //            Wumpusspawn = 2;
-            //        }
-            //    }
-            //    else if (Wumpusspawn == Trapspawn3)
-            //    {
-            //        if (Wumpusspawn != 30)
-            //        {
-            //            Wumpusspawn += 1;
-            //        }
-            //        else
-            //        {
-            //            Wumpusspawn = 2;
-            //        }
-            //    }
-            //    else if (Wumpusspawn == Pitspawn2)
-            //    {
-            //        if (Wumpusspawn != 30)
-            //        {
-            //            Wumpusspawn += 1;
-            //        }
-            //        else
-            //        {
-            //            Wumpusspawn = 2;
-            //        }
-            //    }
-            //    else if (Wumpusspawn == Pitspawn3)
-            //    {
-            //        if (Wumpusspawn != 30)
-            //        {
-            //            Wumpusspawn += 1;
-            //        }
-            //        else
-            //        {
-            //            Wumpusspawn = 2;
-            //        }
-            //    }
-            //    else if (Trapspawn == Trapspawn2)
-            //    {
-            //        if (Trapspawn != 30)
-            //        {
-            //            Trapspawn += 1;
-            //        }
-            //        else
-            //        {
-            //            Trapspawn = 2;
-            //        }
-            //    }
-            //    else if (Trapspawn == Trapspawn3)
-            //    {
-            //        if (Trapspawn != 30)
-            //        {
-            //            Trapspawn += 1;
-            //        }
-            //        else
-            //        {
-            //            Trapspawn = 2;
-            //        }
-            //    }
-            //    else if (Trapspawn == Pitspawn2)
-            //    {
-            //        if (Trapspawn != 30)
-            //        {
-            //            Trapspawn += 1;
-            //        }
-            //        else
-            //        {
-            //            Trapspawn = 2;
-            //        }
-            //    }
-            //    else if (Trapspawn == Pitspawn3)
-            //    {
-            //        if (Trapspawn != 30)
-            //        {
-            //            Trapspawn += 1;
-            //        }
-            //        else
-            //        {
-            //            Trapspawn = 2;
-            //        }
-            //    }
-            //    else if (PitSpawn == Pitspawn2)
-            //    {
-            //        if (Pitspawn2 != 30)
-            //        {
-            //            Pitspawn2 += 1;
-            //        }
-            //        else
-            //        {
-            //            Pitspawn2 = 2;
-            //        }
-            //    }
-            //    else if (PitSpawn == Pitspawn3)
-            //    {
-            //        if (Pitspawn3 != 30)
-            //        {
-            //            Pitspawn3 += 1;
-            //        }
-            //        else
-            //        {
-            //            Pitspawn3 = 2;
-            //        }
-            //    }
-            //    else if (Trapspawn2 == Trapspawn3)
-            //    {
-            //        if (Trapspawn3 != 30)
-            //        {
-            //            Trapspawn3 += 1;
-            //        }
-            //        else
-            //        {
-            //            Trapspawn3 = 2;
-            //        }
-            //    }      
-            //}
-            //WumpusSpawn = Wumpusspawn;
-            //TrapSpawn = Trapspawn;
-            //PitSpawn = Pitspawn;
-            //TrapSpawn2 = Trapspawn2;
-            //TrapSpawn3 = Trapspawn3;
-            //PitSpawn2 = Pitspawn2;
-            //PitSpawn3 = Pitspawn3;
-            //return new int[] { Trapspawn, Wumpusspawn, Pitspawn, Trapspawn2, Trapspawn3, Pitspawn2, Pitspawn3 };
-
-
+            while (usedNumbers.Count < 10)
+            {
+                usedNumbers.Add(random.Next(2, 30));
+            }
+            int[] values = new int[10];
+            usedNumbers.CopyTo(values);
+            return values;
         }
         public enum Hazards
         {
