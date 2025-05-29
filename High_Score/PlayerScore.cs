@@ -9,14 +9,14 @@ namespace High_Score
 {
     public class PlayerScore
     {
-        public PlayerScore(string name, int score, int caveSystem)
+        public PlayerScore(string name, ulong score, int caveSystem)
         {
             Name = name;
             CaveSystem = caveSystem;
             Score = score;
         }
 
-        public int Score {  get; set; }
+        public ulong Score {  get; set; }
         public string Name { get; set; }
         public int CaveSystem { get; set; }
 

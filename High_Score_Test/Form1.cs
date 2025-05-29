@@ -4,6 +4,9 @@ namespace High_Score_Test
 {
     public partial class Form1 : Form
     {
+        /// <summary>
+        /// Displaying High Score
+        /// </summary>
         public Form1()
         {
             InitializeComponent();
@@ -20,13 +23,17 @@ namespace High_Score_Test
             try
             { 
                 string name = textBoxName.Text;
-                int score = int.Parse(textBoxScore.Text);
+                ulong score = ulong.Parse(textBoxScore.Text);
                 int cave = int.Parse(textBoxCave.Text);
                 changed = hscore.AddScore(name, score, cave);
             }
+            catch (OverflowException)
+            {
+                MessageBox.Show("High Score must be less than 18,446,744,073,709,551,615");
+            }
             catch (FormatException)
             {
-                MessageBox.Show("Score and Cave must be Integers");
+                MessageBox.Show("Score and Cave must be long integers");
             }
 
             if (changed)

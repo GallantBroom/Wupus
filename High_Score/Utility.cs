@@ -20,7 +20,11 @@ namespace High_Score
             streamWriter.Flush();
             streamWriter.Close();
         }
-
+        /// <summary>
+        /// Getting Player score from read file
+        /// </summary>
+        /// <param name="fileName">Get player score</param>
+        /// <returns></returns>
         public static List<PlayerScore> ReadFromFile(string fileName)
         {
             StreamReader streamReader = new StreamReader(fileName);
