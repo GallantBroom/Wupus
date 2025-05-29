@@ -357,6 +357,7 @@ namespace GameLocation
 
         public int ShootArrow(int ShootingInCave, int PlayerPos)
         {
+            
             if (ShootingInCave == WumpusSpawn)
             {
                 return 0;
@@ -364,7 +365,6 @@ namespace GameLocation
             else
             {
                 return 1;
-                
             }
         }
 

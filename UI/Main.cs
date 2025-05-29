@@ -1,6 +1,7 @@
 ﻿using Cave;
 using CaveTest;
 using GameControl;
+using GameLocation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,17 +25,20 @@ namespace UI
         }
 
         GameControl.GameControl gamecontrol = new GameControl.GameControl();
-        Cave.Cave Cave = new Cave.Cave();
-        int cave = 1;
-        int room = 1;
+        int[] connectedRooms;
+        int cave = 3;
+        int room = 27;
+        
 
 
         private void warnUser()
         {
-            int[] near = [1,1,1];
+           GameControl.GameControl gameControl = new GameControl.GameControl();
+
+            int[] near = gameControl.giveUIHazards(connectedRooms);
 
             labelHints.Text = "";
-
+            
 
             if (near[0] == 1)
             {
@@ -42,19 +46,19 @@ namespace UI
             }
             if (near[1] == 1)
             {
-                labelHints.Text += '\n' + "You smell a Wumpus nearby.";
+                labelHints.Text += "You smell a Wumpus nearby.";
             }
             if (near[2] == 1)
             {
-                labelHints.Text += '\n' + "You feel a Breeze.";
+                labelHints.Text += "You feel a Breeze.";
             }
 
-
-
+            
 
 
         }
         
+
 
 
 
@@ -68,9 +72,9 @@ namespace UI
             buttonSouthWest.Enabled = false;
 
             
-            int[] connectingRooms = GameControl.GameControl.getConnectingRooms(cave, room);
+            connectedRooms = GameControl.GameControl.getConnectingRooms(cave, room);
 
-            int[] freePathways = UI.findCorrectDirection(connectingRooms, room);
+            int[] freePathways = UI.findCorrectDirection(connectedRooms, room);
 
 
 
@@ -120,6 +124,18 @@ namespace UI
 
             }
         }
+        private void changeRoom()
+        {
+           GameControl.GameControl gameControl = new GameControl.GameControl(); 
+
+            if (gameControl.isPlayerTrapped) { 
+
+            
+                room = gameControl.playerWasTrapped(cave, room);
+            
+
+            }
+        }
 
 
 
@@ -142,16 +158,18 @@ namespace UI
 
         private void buttonNorthEast_Click(object sender, EventArgs e)
         {
-
-            room -= 5;
+            
+            if (room == 5) { room += 24; }
+            else if (room == 30) { room -= 11; }
+            else { room -= 6; }
             connectingRooms();
             warnUser();
         }
 
         private void buttonEast_Click(object sender, EventArgs e)
         {
-
-            if (room == 6 || room == 12 || room == 18 || room == 24 || room == 30) {room += 5; }
+            
+            if (room == 6 || room == 12 || room == 18 || room == 24 || room == 30) { room -= 5; }
 
             else { room += 1; }
 
@@ -162,21 +180,28 @@ namespace UI
 
         private void buttonSouthEast_Click(object sender, EventArgs e)
         {
-            room += 6;
+            if(room == 30) { room -= 29; }
+            else if(room ==26) { room -= 23; }
+
+            else { room += 6; }
+                
             connectingRooms();
             warnUser();
         }
 
         private void buttonSouthWest_Click(object sender, EventArgs e)
         {
-            room += 5;
+            if (room == 26) { room -= 23; }
+            else if (room == 19) { room += 11; }
+            else { room += 5; }
             connectingRooms();
             warnUser();
         }
 
         private void buttonWest_Click(object sender, EventArgs e)
         {
-            if (room == 1 || room == 7 || room == 13 || room == 19 || room == 25)
+           
+            if (room == 1 || room == 7 || room == 13 ||room == 19 || room == 25)
             {
             room += 5;
 
@@ -189,16 +214,18 @@ namespace UI
 
         private void buttonNorthWest_Click(object sender, EventArgs e)
         {
-            room -= 6;
+            if (room == 1) { room += 29; }
+            else if (room == 3) { room += 23; }
+
+            else { room -= 6; }
             connectingRooms();
             warnUser();
         }
 
         private void buttonCalculateRoomDirections_Click(object sender, EventArgs e)
         {
-            connectingRooms();
-            warnUser();
-            textBoxCaveNumber.Text = room.ToString();
+            
+            textBoxCaveNumber.Text = room.ToString();   
         }
 
         private void pictureBoxCoin_Click(object sender, EventArgs e)
