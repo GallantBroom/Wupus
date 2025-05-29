@@ -30,20 +30,20 @@ namespace UI
             //topScores = High_Score.High_Score.getTopScores();
 
 
-            
-            
-                //adding the usernames to the form 
-                labelName1.Text = topPlayers[0].ToString();
-                labelName2.Text = topPlayers[1].ToString();
-                labelName3.Text = topPlayers[2].ToString();
-                labelName4.Text = topPlayers[3].ToString();
-                labelName5.Text = topPlayers[4].ToString();
-                labelName6.Text = topPlayers[5].ToString();
-                labelName7.Text = topPlayers[6].ToString();
-                labelName8.Text = topPlayers[7].ToString();
-                labelName9.Text = topPlayers[8].ToString();
-                labelName10.Text = topPlayers[9].ToString();
-            
+
+
+            //adding the usernames to the form 
+            labelName1.Text = topPlayers[0].ToString();
+            labelName2.Text = topPlayers[1].ToString();
+            labelName3.Text = topPlayers[2].ToString();
+            labelName4.Text = topPlayers[3].ToString();
+            labelName5.Text = topPlayers[4].ToString();
+            labelName6.Text = topPlayers[5].ToString();
+            labelName7.Text = topPlayers[6].ToString();
+            labelName8.Text = topPlayers[7].ToString();
+            labelName9.Text = topPlayers[8].ToString();
+            labelName10.Text = topPlayers[9].ToString();
+
 
             //adding top scores to the form
 
@@ -62,9 +62,9 @@ namespace UI
 
         }
 
+        private void labelName_Click(object sender, EventArgs e)
+        {
 
-
-
-
+        }
     }
 }

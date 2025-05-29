@@ -42,6 +42,15 @@
             buttonCalculateRoomDirections = new Button();
             pictureBoxCoin = new PictureBox();
             labelHints = new Label();
+            labelArrows = new Label();
+            labelGold = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            labelGoldAmount = new Label();
+            labelArrowAmount = new Label();
+            buttonShop = new Button();
+            labelScoreAmount = new Label();
+            labelScore = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCoin).BeginInit();
             SuspendLayout();
             // 
@@ -81,7 +90,7 @@
             // buttonSouthEast
             // 
             buttonSouthEast.Enabled = false;
-            buttonSouthEast.Location = new Point(577, 376);
+            buttonSouthEast.Location = new Point(622, 369);
             buttonSouthEast.Name = "buttonSouthEast";
             buttonSouthEast.Size = new Size(120, 29);
             buttonSouthEast.TabIndex = 3;
@@ -92,7 +101,7 @@
             // buttonEast
             // 
             buttonEast.Enabled = false;
-            buttonEast.Location = new Point(577, 245);
+            buttonEast.Location = new Point(657, 245);
             buttonEast.Name = "buttonEast";
             buttonEast.Size = new Size(153, 41);
             buttonEast.TabIndex = 5;
@@ -114,7 +123,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(294, 279);
+            label1.Location = new Point(566, 294);
             label1.Name = "label1";
             label1.Size = new Size(78, 15);
             label1.TabIndex = 7;
@@ -122,22 +131,22 @@
             // 
             // textBoxCaveNumber
             // 
-            textBoxCaveNumber.Location = new Point(401, 276);
+            textBoxCaveNumber.Location = new Point(763, 291);
             textBoxCaveNumber.Name = "textBoxCaveNumber";
-            textBoxCaveNumber.Size = new Size(100, 23);
+            textBoxCaveNumber.Size = new Size(10, 23);
             textBoxCaveNumber.TabIndex = 8;
             // 
             // textBoxRoomNumber
             // 
-            textBoxRoomNumber.Location = new Point(401, 333);
+            textBoxRoomNumber.Location = new Point(763, 348);
             textBoxRoomNumber.Name = "textBoxRoomNumber";
-            textBoxRoomNumber.Size = new Size(100, 23);
+            textBoxRoomNumber.Size = new Size(10, 23);
             textBoxRoomNumber.TabIndex = 10;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(294, 336);
+            label2.Location = new Point(566, 351);
             label2.Name = "label2";
             label2.Size = new Size(84, 15);
             label2.TabIndex = 9;
@@ -145,9 +154,9 @@
             // 
             // buttonCalculateRoomDirections
             // 
-            buttonCalculateRoomDirections.Location = new Point(294, 404);
+            buttonCalculateRoomDirections.Location = new Point(682, 419);
             buttonCalculateRoomDirections.Name = "buttonCalculateRoomDirections";
-            buttonCalculateRoomDirections.Size = new Size(158, 23);
+            buttonCalculateRoomDirections.Size = new Size(42, 23);
             buttonCalculateRoomDirections.TabIndex = 11;
             buttonCalculateRoomDirections.Text = "Calculate room directions";
             buttonCalculateRoomDirections.UseVisualStyleBackColor = true;
@@ -157,7 +166,7 @@
             // 
             pictureBoxCoin.BackgroundImage = (Image)resources.GetObject("pictureBoxCoin.BackgroundImage");
             pictureBoxCoin.BackgroundImageLayout = ImageLayout.Center;
-            pictureBoxCoin.Location = new Point(452, 36);
+            pictureBoxCoin.Location = new Point(733, 173);
             pictureBoxCoin.Name = "pictureBoxCoin";
             pictureBoxCoin.Size = new Size(37, 16);
             pictureBoxCoin.TabIndex = 12;
@@ -168,18 +177,108 @@
             // labelHints
             // 
             labelHints.AutoSize = true;
-            labelHints.Location = new Point(359, 36);
+            labelHints.Location = new Point(198, 18);
             labelHints.Name = "labelHints";
             labelHints.Size = new Size(30, 15);
             labelHints.TabIndex = 13;
             labelHints.Text = "Hint";
             labelHints.Click += labelHints_Click;
             // 
+            // labelArrows
+            // 
+            labelArrows.AutoSize = true;
+            labelArrows.Location = new Point(249, 386);
+            labelArrows.Name = "labelArrows";
+            labelArrows.Size = new Size(47, 15);
+            labelArrows.TabIndex = 14;
+            labelArrows.Text = "Arrows:";
+            // 
+            // labelGold
+            // 
+            labelGold.AutoSize = true;
+            labelGold.Location = new Point(405, 386);
+            labelGold.Name = "labelGold";
+            labelGold.Size = new Size(35, 15);
+            labelGold.TabIndex = 15;
+            labelGold.Text = "Gold:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(336, 386);
+            label5.Name = "label5";
+            label5.Size = new Size(38, 15);
+            label5.TabIndex = 16;
+            label5.Text = "label5";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(336, 426);
+            label6.Name = "label6";
+            label6.Size = new Size(38, 15);
+            label6.TabIndex = 19;
+            label6.Text = "label6";
+            // 
+            // labelGoldAmount
+            // 
+            labelGoldAmount.AutoSize = true;
+            labelGoldAmount.Location = new Point(418, 417);
+            labelGoldAmount.Name = "labelGoldAmount";
+            labelGoldAmount.Size = new Size(13, 15);
+            labelGoldAmount.TabIndex = 18;
+            labelGoldAmount.Text = "0";
+            // 
+            // labelArrowAmount
+            // 
+            labelArrowAmount.AutoSize = true;
+            labelArrowAmount.Location = new Point(266, 417);
+            labelArrowAmount.Name = "labelArrowAmount";
+            labelArrowAmount.Size = new Size(13, 15);
+            labelArrowAmount.TabIndex = 17;
+            labelArrowAmount.Text = "0";
+            // 
+            // buttonShop
+            // 
+            buttonShop.Location = new Point(468, 378);
+            buttonShop.Name = "buttonShop";
+            buttonShop.Size = new Size(95, 63);
+            buttonShop.TabIndex = 20;
+            buttonShop.Text = "Shop";
+            buttonShop.UseVisualStyleBackColor = true;
+            // 
+            // labelScoreAmount
+            // 
+            labelScoreAmount.AutoSize = true;
+            labelScoreAmount.Location = new Point(583, 40);
+            labelScoreAmount.Name = "labelScoreAmount";
+            labelScoreAmount.Size = new Size(13, 15);
+            labelScoreAmount.TabIndex = 22;
+            labelScoreAmount.Text = "0";
+            // 
+            // labelScore
+            // 
+            labelScore.AutoSize = true;
+            labelScore.Location = new Point(566, 9);
+            labelScore.Name = "labelScore";
+            labelScore.Size = new Size(39, 15);
+            labelScore.TabIndex = 21;
+            labelScore.Text = "Score:";
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(labelScoreAmount);
+            Controls.Add(labelScore);
+            Controls.Add(buttonShop);
+            Controls.Add(label6);
+            Controls.Add(labelGoldAmount);
+            Controls.Add(labelArrowAmount);
+            Controls.Add(label5);
+            Controls.Add(labelGold);
+            Controls.Add(labelArrows);
             Controls.Add(labelHints);
             Controls.Add(pictureBoxCoin);
             Controls.Add(buttonCalculateRoomDirections);
@@ -216,5 +315,14 @@
         private Button buttonCalculateRoomDirections;
         private PictureBox pictureBoxCoin;
         private Label labelHints;
+        private Label labelArrows;
+        private Label labelGold;
+        private Label label5;
+        private Label label6;
+        private Label labelGoldAmount;
+        private Label labelArrowAmount;
+        private Button buttonShop;
+        private Label labelScoreAmount;
+        private Label labelScore;
     }
 }

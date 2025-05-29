@@ -35,6 +35,8 @@
             label2 = new Label();
             textBoxRoomNumber = new TextBox();
             textBoxConnectingRooms = new TextBox();
+            textBoxbool = new TextBox();
+            label3 = new Label();
             SuspendLayout();
             // 
             // buttonCave1
@@ -97,11 +99,30 @@
             textBoxConnectingRooms.TabIndex = 10;
             textBoxConnectingRooms.Text = "0, 0, 0";
             // 
+            // textBoxbool
+            // 
+            textBoxbool.Location = new Point(349, 307);
+            textBoxbool.Name = "textBoxbool";
+            textBoxbool.ReadOnly = true;
+            textBoxbool.Size = new Size(294, 23);
+            textBoxbool.TabIndex = 12;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(219, 310);
+            label3.Name = "label3";
+            label3.Size = new Size(60, 15);
+            label3.TabIndex = 11;
+            label3.Text = "Directions";
+            // 
             // FormCave
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(textBoxbool);
+            Controls.Add(label3);
             Controls.Add(textBoxConnectingRooms);
             Controls.Add(label2);
             Controls.Add(textBoxRoomNumber);
@@ -125,5 +146,7 @@
         private Label label2;
         private TextBox textBoxRoomNumber;
         private TextBox textBoxConnectingRooms;
+        private TextBox textBoxbool;
+        private Label label3;
     }
 }
