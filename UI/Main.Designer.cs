@@ -123,7 +123,11 @@
             // label1
             // 
             label1.AutoSize = true;
+<<<<<<< HEAD
             label1.Location = new Point(657, 336);
+=======
+            label1.Location = new Point(249, 203);
+>>>>>>> syncing to main branch
             label1.Name = "label1";
             label1.Size = new Size(78, 15);
             label1.TabIndex = 7;
@@ -131,22 +135,32 @@
             // 
             // textBoxCaveNumber
             // 
+<<<<<<< HEAD
             textBoxCaveNumber.Location = new Point(445, 194);
             textBoxCaveNumber.Name = "textBoxCaveNumber";
             textBoxCaveNumber.Size = new Size(89, 23);
+=======
+            textBoxCaveNumber.Location = new Point(348, 195);
+            textBoxCaveNumber.Name = "textBoxCaveNumber";
+            textBoxCaveNumber.Size = new Size(92, 23);
+>>>>>>> syncing to main branch
             textBoxCaveNumber.TabIndex = 8;
             // 
             // textBoxRoomNumber
             // 
-            textBoxRoomNumber.Location = new Point(763, 348);
+            textBoxRoomNumber.Location = new Point(348, 291);
             textBoxRoomNumber.Name = "textBoxRoomNumber";
-            textBoxRoomNumber.Size = new Size(10, 23);
+            textBoxRoomNumber.Size = new Size(92, 23);
             textBoxRoomNumber.TabIndex = 10;
             // 
             // label2
             // 
             label2.AutoSize = true;
+<<<<<<< HEAD
             label2.Location = new Point(300, 202);
+=======
+            label2.Location = new Point(243, 291);
+>>>>>>> syncing to main branch
             label2.Name = "label2";
             label2.Size = new Size(84, 15);
             label2.TabIndex = 9;
@@ -154,9 +168,15 @@
             // 
             // buttonCalculateRoomDirections
             // 
+<<<<<<< HEAD
             buttonCalculateRoomDirections.Location = new Point(367, 245);
             buttonCalculateRoomDirections.Name = "buttonCalculateRoomDirections";
             buttonCalculateRoomDirections.Size = new Size(150, 23);
+=======
+            buttonCalculateRoomDirections.Location = new Point(364, 245);
+            buttonCalculateRoomDirections.Name = "buttonCalculateRoomDirections";
+            buttonCalculateRoomDirections.Size = new Size(108, 23);
+>>>>>>> syncing to main branch
             buttonCalculateRoomDirections.TabIndex = 11;
             buttonCalculateRoomDirections.Text = "Calculate room directions";
             buttonCalculateRoomDirections.UseVisualStyleBackColor = true;

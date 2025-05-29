@@ -93,6 +93,8 @@ namespace GameControl
 
             GameLocation.GameLocation gameLocation = new GameLocation.GameLocation();
 
+
+
             int[] hazards = gameLocation.GetCave(connectingRooms[0], connectingRooms[1], connectingRooms[2]);
 
 
