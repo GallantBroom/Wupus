@@ -23,11 +23,14 @@ namespace UI
             InitializeComponent();
 
         }
+        public int cave { get; set; }
+        
 
         GameControl.GameControl gamecontrol = new GameControl.GameControl();
         int[] connectedRooms;
-        int cave = 3;
-        int room = 27;
+        
+        int room = 1;
+        
         
 
 
@@ -161,7 +164,7 @@ namespace UI
             
             if (room == 5) { room += 24; }
             else if (room == 30) { room -= 11; }
-            else { room -= 6; }
+            else { room -= 5; }
             connectingRooms();
             warnUser();
         }
@@ -191,8 +194,8 @@ namespace UI
 
         private void buttonSouthWest_Click(object sender, EventArgs e)
         {
-            if (room == 26) { room -= 23; }
-            else if (room == 19) { room += 11; }
+            if (room == 26 || room == 25 || room == 27 || room == 28 || room == 29 || room == 30) { room -= 24; }
+            else if (room == 1 || room == 7 || room == 13 ||room == 19) { room += 11; }
             else { room += 5; }
             connectingRooms();
             warnUser();

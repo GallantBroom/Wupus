@@ -123,7 +123,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(566, 294);
+            label1.Location = new Point(657, 336);
             label1.Name = "label1";
             label1.Size = new Size(78, 15);
             label1.TabIndex = 7;
@@ -131,9 +131,9 @@
             // 
             // textBoxCaveNumber
             // 
-            textBoxCaveNumber.Location = new Point(763, 291);
+            textBoxCaveNumber.Location = new Point(445, 194);
             textBoxCaveNumber.Name = "textBoxCaveNumber";
-            textBoxCaveNumber.Size = new Size(10, 23);
+            textBoxCaveNumber.Size = new Size(89, 23);
             textBoxCaveNumber.TabIndex = 8;
             // 
             // textBoxRoomNumber
@@ -146,7 +146,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(566, 351);
+            label2.Location = new Point(300, 202);
             label2.Name = "label2";
             label2.Size = new Size(84, 15);
             label2.TabIndex = 9;
@@ -154,9 +154,9 @@
             // 
             // buttonCalculateRoomDirections
             // 
-            buttonCalculateRoomDirections.Location = new Point(682, 419);
+            buttonCalculateRoomDirections.Location = new Point(367, 245);
             buttonCalculateRoomDirections.Name = "buttonCalculateRoomDirections";
-            buttonCalculateRoomDirections.Size = new Size(42, 23);
+            buttonCalculateRoomDirections.Size = new Size(150, 23);
             buttonCalculateRoomDirections.TabIndex = 11;
             buttonCalculateRoomDirections.Text = "Calculate room directions";
             buttonCalculateRoomDirections.UseVisualStyleBackColor = true;
