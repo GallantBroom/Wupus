@@ -78,11 +78,11 @@ namespace GameLocation
             Nothing,
             Wumpus,
             Trap,
-            Pit,
-            Coin
+            Pit
+           
         }
 
-        public Hazards[] PlayerMove(int cave)
+        public Hazards PlayerMove(int cave)
         {
             //I need more info
             //I need which cave the player is moving to
@@ -97,42 +97,33 @@ namespace GameLocation
 
             if (PlayerLocation == WumpusSpawn)
             {
-                for (int i = 0; i < 10; i++)
-                {
-                    if (Coins[i] == PlayerLocation)
-                    {
-                        Coins[i] = 0;
-                        return [Hazards.Coin, Hazards.Wumpus];
-                    }
-                }
-                return [Hazards.Wumpus];
+                return Hazards.Wumpus;
             }
             else if (PlayerLocation == TrapSpawn || PlayerLocation == TrapSpawn2 || PlayerLocation == TrapSpawn3)
             {
-                for (int i = 0; i < 10; i++)
-                {
-                    if (Coins[i] == PlayerLocation)
-                    {
-                        Coins[i] = 0;
-                        return [Hazards.Coin, Hazards.Trap];
-                    }
-                }
-                return [Hazards.Trap];
+                
+                return Hazards.Trap;
             }
             else if (PlayerLocation == PitSpawn || PlayerLocation == PitSpawn2 || PlayerLocation == PitSpawn3)
             {
-                for (int i = 0; i < 10; i++)
-                {
-                    if (Coins[i] == PlayerLocation)
-                    {
-                        Coins[i] = 0;
-                        return [Hazards.Coin, Hazards.Pit];
-                    }
-                }
-                return [Hazards.Pit];
+                
+                return Hazards.Pit;
             }
             
-            return [Hazards.Nothing];
+            return Hazards.Nothing;
+        }
+        public int CheckCoin(int cave)
+        {
+            PlayerLocation = cave;
+            for (int i = 0; i < 10; i++)
+            {
+                if (Coins[i] == PlayerLocation)
+                {
+                    Coins[i] = 0;
+                    return 1;
+                }
+            }
+            return 0; // No coin found in the cave
         }
 
         public int[] GetCave(int adg1, int adg2, int adg3)
