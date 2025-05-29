@@ -26,8 +26,8 @@ namespace UI
 
         GameControl.GameControl gamecontrol = new GameControl.GameControl();
         int[] connectedRooms;
-        int cave = 1;
-        int room = 30;
+        int cave = 3;
+        int room = 27;
         
 
 

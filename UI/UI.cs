@@ -33,90 +33,68 @@ namespace UI
 
             for (int i = 0; i < connectingRooms.Length; i++)
             {
-                ablePathways[i] = connectingRooms[i] - currentRoom;
+                ablePathways[i] = currentRoom - connectingRooms[i];
 
-                if (ablePathways[i] == 29)
+                if (ablePathways[i] == -29 || ablePathways[i] == -23 || ablePathways[i] == 6)
                 {
                     directions[i] = 1;
 
                 }
-                else
+                else if (ablePathways[i] == 11 || ablePathways[i] == -24)
                 {
-                    if (ablePathways[i] == 5 || ablePathways[i] == -5)
+                    directions[i] = 2;
+                }
+                else if (ablePathways[i] == -1 || ablePathways[i] == -5)
+                {
+
+                    directions[i] = 3;
+                }
+                else if(ablePathways[i] == 5)
+                {
+                    for(int j = 1; j < 26; j+= 6)
                     {
-                        for (int k = 1; k < 26; k += 6)
+                        if (currentRoom == j)
                         {
-
-                            if (currentRoom == k)
-                            {
-
-
-                                if (ablePathways[i] == 5)
-                                {
-                                    directions[i] = 6;
-                                    break;
-
-                                }
-
-                            }
-                            else if (currentRoom != k && ablePathways[i] == 5)
-                            {
-                                directions[i] = 5;
-                            }
-
+                            directions[i] = 3;
+                            break;
                         }
-
-                        for (int j = 6; j < 30; j += 6)
+                        else if (currentRoom != j)
                         {
-
-                            if (currentRoom == j)
-                            {
-
-                                if (ablePathways[i] == -5)
-                                {
-                                    directions[i] = 3;
-
-                                }
-
-                            }
-                            else if (currentRoom != j && ablePathways[i] == -5)
-
-                            {
-                                directions[i] = 2;
-                            }
-
+                            directions[i] = 2;
                         }
-
                     }
+                }
+                else if (ablePathways[i] == -6 || ablePathways[i] ==23 || ablePathways[i] ==29)
+                {
+                    directions[i] = 4;
+                }
+                else if (ablePathways[i] == 24 || ablePathways[i] == -11)
+                {
+                    directions[i] = 5;
+                }
+                else if (ablePathways[i] == 1)
+                {
+                    directions[i] = 6;
+                }
 
-                    else if (ablePathways[i] == 6 || ablePathways[i] == -23 || ablePathways[i] == -29)
+                else if (ablePathways[i] == -5)
+                {
+
+                    for (int j = 0; j < 31; j+= 6)
                     {
-
-                        directions[i] = 1;
-                    }
-                    else if (ablePathways[i] == 1)
-                    {
-
-                        directions[i] = 3;
-                    }
-                    else if (ablePathways[i] == 6)
-                    {
-
-                        directions[i] = 4;
-                    }
-                    else if (ablePathways[i] == -1)
-                    {
-
-                        directions[i] = 6;
-
-                    }
-                    else if (ablePathways[i] == -11)
-                    {
-
-                        directions[i] = 2;
+                        if (currentRoom == j)
+                        {
+                            directions[i] = 6;
+                            break;
+                        }
+                        else if (currentRoom != j)
+                        {
+                            directions[i] = 5;
+                        }
                     }
 
                 }
+                
 
 
 

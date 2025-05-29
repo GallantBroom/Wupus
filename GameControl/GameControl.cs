@@ -41,7 +41,7 @@ namespace GameControl
         public void GameLose()
         {
            
-            
+           
 
 
         }
@@ -99,6 +99,7 @@ namespace GameControl
 
         }
 
+        //the player has encouintered a room with a trap. Find what trap it is and do the nessesary thing
         public int playerWasTrapped(int cave,int room)
         {
             GameLocation.GameLocation gameLocation = new GameLocation.GameLocation();
@@ -129,6 +130,7 @@ namespace GameControl
 
         }
 
+        //Find the connecting rooms for the player, given the cave number and the current room
         public static int[] getConnectingRooms(int caveNumber, int currentRoom)
         {
             Cave.Cave cave1 = new Cave.Cave();
@@ -143,7 +145,8 @@ namespace GameControl
             return cave;
         }
 
-       public static void playerMovesRooms()
+        //ask player class what the player's inventory is, what their score is and then show it on the UI
+       public static void updateInventory()
         {
 
             
