@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography;
@@ -29,6 +30,7 @@ namespace GameLocation
         public int PitSpawn2 = 0;
         public int PitSpawn3 = 0;
         public int[] Values = new int[7];
+        public int[] Coins = new int[10]; // Array to hold coin locations
         public int[] Spawn()
         {
 
@@ -66,17 +68,21 @@ namespace GameLocation
             }
             int[] values = new int[10];
             usedNumbers.CopyTo(values);
+            Coins = values;
             return values;
         }
+
+
         public enum Hazards
         {
             Nothing,
             Wumpus,
             Trap,
-            Pit
+            Pit,
+            Coin
         }
 
-        public Hazards PlayerMove(int cave)
+        public Hazards[] PlayerMove(int cave)
         {
             //I need more info
             //I need which cave the player is moving to
@@ -91,18 +97,42 @@ namespace GameLocation
 
             if (PlayerLocation == WumpusSpawn)
             {
-                return Hazards.Wumpus;
+                for (int i = 0; i < 10; i++)
+                {
+                    if (Coins[i] == PlayerLocation)
+                    {
+                        Coins[i] = 0;
+                        return [Hazards.Coin, Hazards.Wumpus];
+                    }
+                }
+                return [Hazards.Wumpus];
             }
             else if (PlayerLocation == TrapSpawn || PlayerLocation == TrapSpawn2 || PlayerLocation == TrapSpawn3)
             {
-                Trapped();
-                return Hazards.Trap;
+                for (int i = 0; i < 10; i++)
+                {
+                    if (Coins[i] == PlayerLocation)
+                    {
+                        Coins[i] = 0;
+                        return [Hazards.Coin, Hazards.Trap];
+                    }
+                }
+                return [Hazards.Trap];
             }
             else if (PlayerLocation == PitSpawn || PlayerLocation == PitSpawn2 || PlayerLocation == PitSpawn3)
             {
-                return Hazards.Pit;
+                for (int i = 0; i < 10; i++)
+                {
+                    if (Coins[i] == PlayerLocation)
+                    {
+                        Coins[i] = 0;
+                        return [Hazards.Coin, Hazards.Pit];
+                    }
+                }
+                return [Hazards.Pit];
             }
-            return Hazards.Nothing;
+            
+            return [Hazards.Nothing];
         }
 
         public int[] GetCave(int adg1, int adg2, int adg3)
@@ -155,7 +185,7 @@ namespace GameLocation
         }
 
 
-        private void Trapped()
+        private int[] Trapped()
         {
             Random random = new Random();
             Random rand = new Random();
@@ -185,7 +215,7 @@ namespace GameLocation
                 }
             }
             
-            PlayerLocation = NewPlayerLocation;
+            return [NewPlayerLocation, NewTrapspawn];
             TrapSpawn = NewTrapspawn;
         }
 
