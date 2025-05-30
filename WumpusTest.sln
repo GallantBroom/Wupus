@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Player", "Player\Player.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameLocationTest2", "GameLocationTest2\GameLocationTest2.csproj", "{F94D45AC-147B-4A12-A813-8924072A84EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trivia", "Triva\Trivia.csproj", "{8EE5D438-1A9F-429B-9DFC-C3956C101BEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriviaTest", "TriviaTest\TriviaTest.csproj", "{EE121CF9-1F14-4398-930E-C1FBC1F3CF93}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,14 @@ Global
 		{F94D45AC-147B-4A12-A813-8924072A84EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F94D45AC-147B-4A12-A813-8924072A84EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F94D45AC-147B-4A12-A813-8924072A84EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EE5D438-1A9F-429B-9DFC-C3956C101BEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EE5D438-1A9F-429B-9DFC-C3956C101BEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EE5D438-1A9F-429B-9DFC-C3956C101BEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EE5D438-1A9F-429B-9DFC-C3956C101BEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE121CF9-1F14-4398-930E-C1FBC1F3CF93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE121CF9-1F14-4398-930E-C1FBC1F3CF93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE121CF9-1F14-4398-930E-C1FBC1F3CF93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE121CF9-1F14-4398-930E-C1FBC1F3CF93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
