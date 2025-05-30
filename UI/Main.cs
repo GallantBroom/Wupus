@@ -21,7 +21,7 @@ namespace UI
         public Main()
         {
             InitializeComponent();
-            pictureBox1.Image = Properties.Resources.EmptyCave;
+            //pictureBox1.Image = Properties.Resources.EmptyCave;
         }
         public int cave { get; set; }
 
@@ -46,7 +46,7 @@ namespace UI
             if (near[0] == 1)
             {
                 labelHints.Text += "There's a Skeleton in this room, there must be a trap nearby.";
-                pictureBox1.Image = Properties.Resources.SkelitonCave;
+                //pictureBox1.Image = Properties.Resources.SkelitonCave;
             }
             if (near[1] == 1)
             {
@@ -179,7 +179,7 @@ namespace UI
             if (room == 6 || room == 12 || room == 18 || room == 24 || room == 30) { room -= 5; }
 
             else { room += 1; }
-            pictureBox1.Image = Properties.Resources.EmptyCave;
+            //pictureBox1.Image = Properties.Resources.EmptyCave;
             connectingRooms();
             warnUser();
 
@@ -191,7 +191,7 @@ namespace UI
             else if (room == 26) { room -= 23; }
 
             else { room += 6; }
-            pictureBox1.Image = Properties.Resources.EmptyCave;
+           // pictureBox1.Image = Properties.Resources.EmptyCave;
             connectingRooms();
             warnUser();
         }
@@ -201,7 +201,7 @@ namespace UI
             if (room == 26 || room == 25 || room == 27 || room == 28 || room == 29 || room == 30) { room -= 24; }
             else if (room == 1 || room == 7 || room == 13 || room == 19) { room += 11; }
             else { room += 5; }
-            pictureBox1.Image = Properties.Resources.EmptyCave;
+            //pictureBox1.Image = Properties.Resources.EmptyCave;
             connectingRooms();
             warnUser();
         }
@@ -215,7 +215,7 @@ namespace UI
 
             }
             else { room -= 1; }
-            pictureBox1.Image = Properties.Resources.EmptyCave;
+           // pictureBox1.Image = Properties.Resources.EmptyCave;
             connectingRooms();
             warnUser();
         }
@@ -226,7 +226,7 @@ namespace UI
             else if (room == 3) { room += 23; }
 
             else { room -= 6; }
-            pictureBox1.Image = Properties.Resources.EmptyCave;
+          //  pictureBox1.Image = Properties.Resources.EmptyCave;
             connectingRooms();
             warnUser();
         }
