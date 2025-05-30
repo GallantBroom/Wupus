@@ -166,8 +166,8 @@ namespace UI
         private void buttonNorthEast_Click(object sender, EventArgs e)
         {
 
-            if (room == 5) { room += 24; }
-            else if (room == 30) { room -= 11; }
+            if (room == 5 || room == 1 || room == 2 || room == 3 || room == 4 || room == 6) { room += 24; }
+            else if (room == 30 || room == 24 || room == 18 || room == 12) { room -= 11; }
             else { room -= 5; }
             connectingRooms();
             warnUser();
@@ -188,7 +188,7 @@ namespace UI
         private void buttonSouthEast_Click(object sender, EventArgs e)
         {
             if (room == 30) { room -= 29; }
-            else if (room == 26) { room -= 23; }
+            else if (room == 26 || room == 25 || room == 27 || room == 28 || room == 29) { room -= 23; }
 
             else { room += 6; }
            // pictureBox1.Image = Properties.Resources.EmptyCave;
@@ -223,7 +223,7 @@ namespace UI
         private void buttonNorthWest_Click(object sender, EventArgs e)
         {
             if (room == 1) { room += 29; }
-            else if (room == 3) { room += 23; }
+            else if (room == 3 || room == 2 || room == 4 || room == 5 || room == 6) { room += 23; }
 
             else { room -= 6; }
           //  pictureBox1.Image = Properties.Resources.EmptyCave;
