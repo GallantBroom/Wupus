@@ -28,80 +28,99 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
+            buttonCave1 = new Button();
+            buttonCave2 = new Button();
+            buttonCave3 = new Button();
+            buttonCave4 = new Button();
+            buttonCave5 = new Button();
+            labelChose = new Label();
             SuspendLayout();
             // 
-            // button1
+            // buttonCave1
             // 
-            button1.Location = new Point(237, 74);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            buttonCave1.Location = new Point(31, 321);
+            buttonCave1.Name = "buttonCave1";
+            buttonCave1.Size = new Size(75, 23);
+            buttonCave1.TabIndex = 0;
+            buttonCave1.Text = "Cave 1";
+            buttonCave1.UseVisualStyleBackColor = true;
+            buttonCave1.Click += button1_Click;
             // 
-            // button2
+            // buttonCave2
             // 
-            button2.Location = new Point(237, 122);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 1;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            buttonCave2.Location = new Point(190, 321);
+            buttonCave2.Name = "buttonCave2";
+            buttonCave2.Size = new Size(75, 23);
+            buttonCave2.TabIndex = 1;
+            buttonCave2.Text = "Cave 2";
+            buttonCave2.UseVisualStyleBackColor = true;
+            buttonCave2.Click += buttonCave2_Click;
             // 
-            // button3
+            // buttonCave3
             // 
-            button3.Location = new Point(237, 172);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 2;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            buttonCave3.Location = new Point(358, 321);
+            buttonCave3.Name = "buttonCave3";
+            buttonCave3.Size = new Size(75, 23);
+            buttonCave3.TabIndex = 2;
+            buttonCave3.Text = "Cave 3";
+            buttonCave3.UseVisualStyleBackColor = true;
+            buttonCave3.Click += buttonCave3_Click;
             // 
-            // button4
+            // buttonCave4
             // 
-            button4.Location = new Point(237, 223);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 3;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
+            buttonCave4.Location = new Point(508, 321);
+            buttonCave4.Name = "buttonCave4";
+            buttonCave4.Size = new Size(75, 23);
+            buttonCave4.TabIndex = 3;
+            buttonCave4.Text = "Cave 4";
+            buttonCave4.UseVisualStyleBackColor = true;
+            buttonCave4.Click += buttonCave4_Click;
             // 
-            // button5
+            // buttonCave5
             // 
-            button5.Location = new Point(237, 267);
-            button5.Name = "button5";
-            button5.Size = new Size(75, 23);
-            button5.TabIndex = 4;
-            button5.Text = "button5";
-            button5.UseVisualStyleBackColor = true;
+            buttonCave5.Location = new Point(668, 321);
+            buttonCave5.Name = "buttonCave5";
+            buttonCave5.Size = new Size(75, 23);
+            buttonCave5.TabIndex = 4;
+            buttonCave5.Text = "Cave 5";
+            buttonCave5.UseVisualStyleBackColor = true;
+            buttonCave5.Click += buttonCave5_Click;
+            // 
+            // labelChose
+            // 
+            labelChose.AutoSize = true;
+            labelChose.Font = new Font("Stencil", 36F, FontStyle.Bold);
+            labelChose.Location = new Point(249, 96);
+            labelChose.Name = "labelChose";
+            labelChose.Size = new Size(318, 57);
+            labelChose.TabIndex = 5;
+            labelChose.Text = "Pick a Cave";
+            labelChose.Click += label1_Click;
             // 
             // Select_Cave
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(labelChose);
+            Controls.Add(buttonCave5);
+            Controls.Add(buttonCave4);
+            Controls.Add(buttonCave3);
+            Controls.Add(buttonCave2);
+            Controls.Add(buttonCave1);
             Name = "Select_Cave";
             Text = "Select_Cave";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
+        private Button buttonCave1;
+        private Button buttonCave2;
+        private Button buttonCave3;
+        private Button buttonCave4;
+        private Button buttonCave5;
+        private Label labelChose;
     }
 }

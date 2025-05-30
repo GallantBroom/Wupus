@@ -21,43 +21,49 @@ namespace UI
         public Main()
         {
             InitializeComponent();
-
+            //pictureBox1.Image = Properties.Resources.EmptyCave;
         }
+        public int cave { get; set; }
+
 
         GameControl.GameControl gamecontrol = new GameControl.GameControl();
         int[] connectedRooms;
-        int cave = 3;
-        int room = 27;
-        
+
+        int room = 1;
+
+
 
 
         private void warnUser()
         {
-           GameControl.GameControl gameControl = new GameControl.GameControl();
+            GameControl.GameControl gameControl = new GameControl.GameControl();
 
             int[] near = gameControl.giveUIHazards(connectedRooms);
 
             labelHints.Text = "";
-            
+
 
             if (near[0] == 1)
             {
                 labelHints.Text += "There's a Skeleton in this room, there must be a trap nearby.";
+                //pictureBox1.Image = Properties.Resources.SkelitonCave;
             }
             if (near[1] == 1)
             {
                 labelHints.Text += "You smell a Wumpus nearby.";
+                
             }
             if (near[2] == 1)
             {
                 labelHints.Text += "You feel a Breeze.";
+                
             }
-
             
 
 
+
         }
-        
+
 
 
 
@@ -71,7 +77,7 @@ namespace UI
             buttonWest.Enabled = false;
             buttonSouthWest.Enabled = false;
 
-            
+
             connectedRooms = GameControl.GameControl.getConnectingRooms(cave, room);
 
             int[] freePathways = UI.findCorrectDirection(connectedRooms, room);
@@ -126,13 +132,14 @@ namespace UI
         }
         private void changeRoom()
         {
-           GameControl.GameControl gameControl = new GameControl.GameControl(); 
+            GameControl.GameControl gameControl = new GameControl.GameControl();
 
-            if (gameControl.isPlayerTrapped) { 
+            if (gameControl.isPlayerTrapped)
+            {
 
-            
+
                 room = gameControl.playerWasTrapped(cave, room);
-            
+
 
             }
         }
@@ -158,21 +165,21 @@ namespace UI
 
         private void buttonNorthEast_Click(object sender, EventArgs e)
         {
-            
+
             if (room == 5) { room += 24; }
             else if (room == 30) { room -= 11; }
-            else { room -= 6; }
+            else { room -= 5; }
             connectingRooms();
             warnUser();
         }
 
         private void buttonEast_Click(object sender, EventArgs e)
         {
-            
+
             if (room == 6 || room == 12 || room == 18 || room == 24 || room == 30) { room -= 5; }
 
             else { room += 1; }
-
+            //pictureBox1.Image = Properties.Resources.EmptyCave;
             connectingRooms();
             warnUser();
 
@@ -180,34 +187,35 @@ namespace UI
 
         private void buttonSouthEast_Click(object sender, EventArgs e)
         {
-            if(room == 30) { room -= 29; }
-            else if(room ==26) { room -= 23; }
+            if (room == 30) { room -= 29; }
+            else if (room == 26) { room -= 23; }
 
             else { room += 6; }
-                
+           // pictureBox1.Image = Properties.Resources.EmptyCave;
             connectingRooms();
             warnUser();
         }
 
         private void buttonSouthWest_Click(object sender, EventArgs e)
         {
-            if (room == 26) { room -= 23; }
-            else if (room == 19) { room += 11; }
+            if (room == 26 || room == 25 || room == 27 || room == 28 || room == 29 || room == 30) { room -= 24; }
+            else if (room == 1 || room == 7 || room == 13 || room == 19) { room += 11; }
             else { room += 5; }
+            //pictureBox1.Image = Properties.Resources.EmptyCave;
             connectingRooms();
             warnUser();
         }
 
         private void buttonWest_Click(object sender, EventArgs e)
         {
-           
-            if (room == 1 || room == 7 || room == 13 ||room == 19 || room == 25)
+
+            if (room == 1 || room == 7 || room == 13 || room == 19 || room == 25)
             {
-            room += 5;
+                room += 5;
 
             }
             else { room -= 1; }
-
+           // pictureBox1.Image = Properties.Resources.EmptyCave;
             connectingRooms();
             warnUser();
         }
@@ -218,14 +226,15 @@ namespace UI
             else if (room == 3) { room += 23; }
 
             else { room -= 6; }
+          //  pictureBox1.Image = Properties.Resources.EmptyCave;
             connectingRooms();
             warnUser();
         }
 
         private void buttonCalculateRoomDirections_Click(object sender, EventArgs e)
         {
-            
-            textBoxCaveNumber.Text = room.ToString();   
+
+            //textBoxCaveNumber.Text = room.ToString();
         }
 
         private void pictureBoxCoin_Click(object sender, EventArgs e)
@@ -235,7 +244,12 @@ namespace UI
 
         private void labelHints_Click(object sender, EventArgs e)
         {
-            
+
+
+        }
+
+        private void buttonShop_Click(object sender, EventArgs e)
+        {
 
         }
     }

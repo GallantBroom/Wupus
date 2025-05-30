@@ -33,25 +33,28 @@ namespace UI
 
             for (int i = 0; i < connectingRooms.Length; i++)
             {
-                ablePathways[i] = currentRoom - connectingRooms[i];
+                if (connectingRooms[i] != 0)
+                {
+                    ablePathways[i] = connectingRooms[i] - currentRoom;
+                }
 
-                if (ablePathways[i] == -29 || ablePathways[i] == -23 || ablePathways[i] == 6)
+                if (ablePathways[i] == 29 || ablePathways[i] == 23 || ablePathways[i] == -6)
                 {
                     directions[i] = 1;
 
                 }
-                else if (ablePathways[i] == 11 || ablePathways[i] == -24)
+                else if (ablePathways[i] == -11 || ablePathways[i] == 24)
                 {
                     directions[i] = 2;
                 }
-                else if (ablePathways[i] == -1 || ablePathways[i] == -5)
+                else if (ablePathways[i] == 1)
                 {
 
                     directions[i] = 3;
                 }
-                else if(ablePathways[i] == 5)
+                else if(ablePathways[i] == -5)
                 {
-                    for(int j = 1; j < 26; j+= 6)
+                    for(int j = 0; j < 31; j+= 6)
                     {
                         if (currentRoom == j)
                         {
@@ -64,23 +67,23 @@ namespace UI
                         }
                     }
                 }
-                else if (ablePathways[i] == -6 || ablePathways[i] ==23 || ablePathways[i] ==29)
+                else if (ablePathways[i] == 6 || ablePathways[i] ==-23 || ablePathways[i] ==-29)
                 {
                     directions[i] = 4;
                 }
-                else if (ablePathways[i] == 24 || ablePathways[i] == -11)
+                else if (ablePathways[i] == -24 || ablePathways[i] == 11)
                 {
                     directions[i] = 5;
                 }
-                else if (ablePathways[i] == 1)
+                else if (ablePathways[i] == -1)
                 {
                     directions[i] = 6;
                 }
 
-                else if (ablePathways[i] == -5)
+                else if (ablePathways[i] == 5)
                 {
 
-                    for (int j = 0; j < 31; j+= 6)
+                    for (int j = 1; j < 26; j+= 6)
                     {
                         if (currentRoom == j)
                         {
