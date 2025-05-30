@@ -16,8 +16,10 @@ namespace UI
         {
             InitializeComponent();
         }
+        
 
         int cave = 0;
+        GameControl.GameControl gameControl = new GameControl.GameControl();    
         private void button1_Click(object sender, EventArgs e)
         {
             cave = 1;
@@ -26,7 +28,7 @@ namespace UI
 
             //move the global variable info to the summary form
             MainDLG.cave = cave;
-
+            gameControl.startGame(cave);
 
             //display
             MainDLG.ShowDialog();
@@ -41,6 +43,7 @@ namespace UI
 
             //move the global variable info to the summary form
             MainDLG.cave = cave;
+            gameControl.startGame(cave);
 
             //display
             MainDLG.ShowDialog();
@@ -55,6 +58,7 @@ namespace UI
 
             //move the global variable info to the summary form
             MainDLG.cave = cave;
+            gameControl.startGame(cave);
 
             //display
             MainDLG.ShowDialog();
@@ -69,6 +73,7 @@ namespace UI
 
             //move the global variable info to the summary form
             MainDLG.cave = cave;
+            gameControl.startGame(cave);
 
             //display
             MainDLG.ShowDialog();
@@ -84,6 +89,7 @@ namespace UI
 
             //move the global variable info to the summary form
             MainDLG.cave = cave;
+            gameControl.startGame(cave);
 
             //display
             MainDLG.ShowDialog();

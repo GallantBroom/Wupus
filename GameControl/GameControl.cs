@@ -15,6 +15,8 @@ namespace GameControl
     {
 
         public bool isPlayerTrapped = false;
+        GameLocation.GameLocation gameLocation = new GameLocation.GameLocation();
+        
 
         public GameControl() { 
         
@@ -22,11 +24,11 @@ namespace GameControl
         
          }
         //start the game, go to the cave
-        public void startGame()
+        public int[] startGame(int cavenumber)
         {
-            int cavenumber = 1;
+           
 
-
+            int[] values = gameLocation.Spawn();
 
             //Cave.Cave cave = new Cave.Cave();
 
@@ -35,7 +37,7 @@ namespace GameControl
 
 
 
-
+            return values;
 
         }
         // end the game, go back to the menu screen
@@ -78,7 +80,7 @@ namespace GameControl
         
         public int[] giveHintsToUI()
         {
-            GameLocation.GameLocation gameLocation = new GameLocation.GameLocation();
+           
             int[] near = gameLocation.GetCave(6, 30, 2);
 
             
@@ -91,7 +93,7 @@ namespace GameControl
         public int[] giveUIHazards(int[] connectingRooms)
         {
 
-            GameLocation.GameLocation gameLocation = new GameLocation.GameLocation();
+            
 
 
 
@@ -111,41 +113,41 @@ namespace GameControl
         }
 
         //the player has encouintered a room with a trap. Find what trap it is and do the nessesary thing
-        public int playerWasTrapped(int cave,int room)
-        {
-            GameLocation.GameLocation gameLocation = new GameLocation.GameLocation();
-            if (gameLocation.PlayerMove(cave) == GameLocation.GameLocation.Hazards.Trap)
-            {
+        //public int playerWasTrapped(int cave,int room)
+        //{
+            
+            //if (gameLocation.PlayerMove(cave) == GameLocation.GameLocation.Hazards.Trap)
+            //{
                 //i need to tell UI to move the player to a different room 
                
-                room = gameLocation.PlayerLocation;
-                isPlayerTrapped = true;
+               // room = gameLocation.PlayerLocation;
+               // isPlayerTrapped = true;
 
 
 
 
 
 
-            }
-            else if(gameLocation.PlayerMove(cave) == GameLocation.GameLocation.Hazards.Wumpus)
-            {
+           // }
+           // else if(gameLocation.PlayerMove(cave) == GameLocation.GameLocation.Hazards.Wumpus)
+           // {
                 
-            }
-            else if (gameLocation.PlayerMove(cave) == GameLocation.GameLocation.Hazards.Pit)
-            {
-                GameLose();
+           // }
+            //else if (gameLocation.PlayerMove(cave) == GameLocation.GameLocation.Hazards.Pit)
+           // {
+              //  GameLose();
                 
-            }
+           // }
 
-            return room;
+           // return room;
 
-        }
+       // }
 
         //Find the connecting rooms for the player, given the cave number and the current room
         public static int[] getConnectingRooms(int caveNumber, int currentRoom)
         {
-            Cave.Cave cave1 = new Cave.Cave();
 
+            Cave.Cave cave1 = new Cave.Cave();
             int[] cave = cave1.GiveCave(caveNumber - 1, currentRoom - 1);
 
 

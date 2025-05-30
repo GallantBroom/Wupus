@@ -138,7 +138,7 @@ namespace UI
             {
 
 
-                room = gameControl.playerWasTrapped(cave, room);
+                //room = gameControl.playerWasTrapped(cave, room);
 
 
             }
