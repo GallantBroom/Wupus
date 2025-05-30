@@ -126,26 +126,26 @@ namespace GameLocation
             return 0; // No coin found in the cave
         }
 
-        public int[] GetCave(int adg1, int adg2, int adg3)
+        public int[] GetCave(int adg1, int adg2, int adg3, int[] trappedLocations)
         {
             int NearTrap = 0;
             int NearWumpus = 0;
             int NearPit = 0;
             for (int i = 0; i < 7; i++)
             {
-                if (Values[i] == adg1 || Values[i] == adg2 || Values[i] == adg3)
+                if (trappedLocations[i] == adg1 || trappedLocations[i] == adg2 || trappedLocations[i] == adg3)
                 {
-                    if (Values[i] == TrapSpawn || Values[i] == TrapSpawn2 || Values[i] == TrapSpawn3)
+                    if (trappedLocations[i] == TrapSpawn || trappedLocations[i] == TrapSpawn2 || trappedLocations[i] == TrapSpawn3)
                     {
                         NearTrap = 1;
                         
                     }
-                    else if (Values[i] == WumpusSpawn)
+                    else if (trappedLocations[i] == WumpusSpawn)
                     {
                         NearWumpus = 1;
                         
                     }
-                    else if (Values[i] == PitSpawn || Values[i] == PitSpawn2 || Values[i] == PitSpawn3)
+                    else if (trappedLocations[i] == PitSpawn || trappedLocations[i] == PitSpawn2 || trappedLocations[i] == PitSpawn3)
                     {
                         NearPit = 1;  
                     }

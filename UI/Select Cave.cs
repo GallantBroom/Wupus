@@ -28,7 +28,8 @@ namespace UI
 
             //move the global variable info to the summary form
             MainDLG.cave = cave;
-            gameControl.startGame(cave);
+            MainDLG.TrapLocations = gameControl.startGame(cave);
+
 
             //display
             MainDLG.ShowDialog();
@@ -43,7 +44,7 @@ namespace UI
 
             //move the global variable info to the summary form
             MainDLG.cave = cave;
-            gameControl.startGame(cave);
+            MainDLG.TrapLocations = gameControl.startGame(cave);
 
             //display
             MainDLG.ShowDialog();
@@ -58,7 +59,7 @@ namespace UI
 
             //move the global variable info to the summary form
             MainDLG.cave = cave;
-            gameControl.startGame(cave);
+            MainDLG.TrapLocations = gameControl.startGame(cave);
 
             //display
             MainDLG.ShowDialog();
@@ -73,7 +74,7 @@ namespace UI
 
             //move the global variable info to the summary form
             MainDLG.cave = cave;
-            gameControl.startGame(cave);
+            MainDLG.TrapLocations = gameControl.startGame(cave);
 
             //display
             MainDLG.ShowDialog();
@@ -89,7 +90,7 @@ namespace UI
 
             //move the global variable info to the summary form
             MainDLG.cave = cave;
-            gameControl.startGame(cave);
+            MainDLG.TrapLocations = gameControl.startGame(cave);
 
             //display
             MainDLG.ShowDialog();

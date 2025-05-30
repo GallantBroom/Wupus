@@ -24,10 +24,12 @@ namespace UI
             //pictureBox1.Image = Properties.Resources.EmptyCave;
         }
         public int cave { get; set; }
+        public int[] TrapLocations { get; set; }
 
 
         GameControl.GameControl gamecontrol = new GameControl.GameControl();
         int[] connectedRooms;
+        
 
         int room = 1;
 
@@ -37,8 +39,10 @@ namespace UI
         private void warnUser()
         {
             GameControl.GameControl gameControl = new GameControl.GameControl();
+            Select_Cave caveDLG = new Select_Cave();
 
-            int[] near = gameControl.giveUIHazards(connectedRooms);
+            
+            int[] near = gameControl.giveUIHazards(connectedRooms,TrapLocations);
 
             labelHints.Text = "";
 

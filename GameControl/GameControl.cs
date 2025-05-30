@@ -78,26 +78,26 @@ namespace GameControl
 
         }
         
-        public int[] giveHintsToUI()
+        public void giveHintsToUI()
         {
            
-            int[] near = gameLocation.GetCave(6, 30, 2);
+            
 
             
 
 
-            return near;
+            
         }
 
         
-        public int[] giveUIHazards(int[] connectingRooms)
+        public int[] giveUIHazards(int[] connectingRooms, int[] trappedLocations)
         {
 
             
 
 
 
-            int[] hazards = gameLocation.GetCave(connectingRooms[0], connectingRooms[1], connectingRooms[2]);
+            int[] hazards = gameLocation.GetCave(connectingRooms[0], connectingRooms[1], connectingRooms[2], trappedLocations);
 
 
 
