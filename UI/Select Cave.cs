@@ -30,7 +30,7 @@ namespace UI
 
             //display
             MainDLG.ShowDialog();
-           
+
         }
 
         private void buttonCave2_Click(object sender, EventArgs e)
@@ -44,7 +44,7 @@ namespace UI
 
             //display
             MainDLG.ShowDialog();
-            
+
         }
 
         private void buttonCave3_Click(object sender, EventArgs e)
@@ -58,7 +58,7 @@ namespace UI
 
             //display
             MainDLG.ShowDialog();
-            
+
         }
 
         private void buttonCave4_Click(object sender, EventArgs e)
@@ -72,7 +72,7 @@ namespace UI
 
             //display
             MainDLG.ShowDialog();
-            
+
 
         }
 
@@ -87,7 +87,12 @@ namespace UI
 
             //display
             MainDLG.ShowDialog();
-            
+
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -117,4 +117,41 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="EmptyCave" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EmptyCave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PitCave" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PitCave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Empty Cave" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Empty Cave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Trap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Trap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wumpus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Wumpus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SkelitonCave" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SkelitonCave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EmptyCave1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EmptyCave1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wumpus1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Wumpus1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Trap1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Trap1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SkelitonCave1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SkelitonCave1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PitCave1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PitCave1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Empty Cave1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Empty Cave1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
