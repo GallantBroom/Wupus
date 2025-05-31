@@ -82,7 +82,7 @@ namespace GameLocation
            
         }
 
-        public Hazards PlayerMove(int cave)
+        public int PlayerMove(int cave, int[] values)
         {
             //I need more info
             //I need which cave the player is moving to
@@ -95,22 +95,22 @@ namespace GameLocation
 
             PlayerLocation = cave;
 
-            if (PlayerLocation == WumpusSpawn)
+            if (PlayerLocation == values[1])
             {
-                return Hazards.Wumpus;
+                return 1;
             }
-            else if (PlayerLocation == TrapSpawn || PlayerLocation == TrapSpawn2 || PlayerLocation == TrapSpawn3)
+            else if (PlayerLocation == values[0] || PlayerLocation == values[3] || PlayerLocation == values[4])
             {
                 
-                return Hazards.Trap;
+                return 2;
             }
-            else if (PlayerLocation == PitSpawn || PlayerLocation == PitSpawn2 || PlayerLocation == PitSpawn3)
+            else if (PlayerLocation == values[2] || PlayerLocation == values[5] || PlayerLocation == values[6])
             {
                 
-                return Hazards.Pit;
+                return 3;
             }
             
-            return Hazards.Nothing;
+            return 0;
         }
         public int CheckCoin(int cave)
         {
@@ -135,17 +135,17 @@ namespace GameLocation
             {
                 if (trappedLocations[i] == adg1 || trappedLocations[i] == adg2 || trappedLocations[i] == adg3)
                 {
-                    if (trappedLocations[i] == TrapSpawn || trappedLocations[i] == TrapSpawn2 || trappedLocations[i] == TrapSpawn3)
+                    if (i == 0||i == 3 || i == 4)
                     {
                         NearTrap = 1;
                         
                     }
-                    else if (trappedLocations[i] == WumpusSpawn)
+                    if (i == 1)
                     {
                         NearWumpus = 1;
                         
                     }
-                    else if (trappedLocations[i] == PitSpawn || trappedLocations[i] == PitSpawn2 || trappedLocations[i] == PitSpawn3)
+                    if (i == 2 || i == 5 || i == 6)
                     {
                         NearPit = 1;  
                     }
@@ -176,38 +176,53 @@ namespace GameLocation
         }
 
 
-        private int[] Trapped()
+        public int Trapped(int room)
         {
+            int whichTrap = 0;
             Random random = new Random();
             Random rand = new Random();
             int NewPlayerLocation = rand.Next(1, 30);
             int NewTrapspawn = random.Next(2, 30);
-            while (NewTrapspawn == NewPlayerLocation || NewPlayerLocation == WumpusSpawn || NewPlayerLocation == PitSpawn)
+            for(int i = 0; i < 7; i++)
             {
-                if (NewTrapspawn != 30)
+                if (Values[i] == NewPlayerLocation)
                 {
-                    NewTrapspawn = +1;
+                    NewPlayerLocation = rand.Next(1, 30);
+                    i = -1; // Reset the loop to check again
                 }
-                else
-                {
-                    NewTrapspawn = 1;
-                }
-                
             }
-            while (NewPlayerLocation == TrapSpawn || NewPlayerLocation == WumpusSpawn || NewPlayerLocation == PitSpawn)
+            for (int i = 0; i < 7; i++)
             {
-                if (NewPlayerLocation != 30)
+                if (Values[i] == NewTrapspawn)
                 {
-                    NewPlayerLocation = +1;
-                }
-                else
-                {
-                    NewPlayerLocation = 1;
+                    NewTrapspawn = random.Next(2, 30);
+                    i = -1; // Reset the loop to check again
                 }
             }
             
-            return [NewPlayerLocation, NewTrapspawn];
-            TrapSpawn = NewTrapspawn;
+            while (NewTrapspawn == NewPlayerLocation)
+            {
+                for (int i = 0; i < 7; i++)
+                {
+                    if (Values[i] == NewTrapspawn)
+                    {
+                        NewTrapspawn = random.Next(2, 30);
+                        i = -1; // Reset the loop to check again
+                    }
+                }
+
+            }
+            for (int i = 0; i < 7; i++)
+            {
+                if (Values[i] == room)
+                {
+                    whichTrap = i;
+                }
+            }
+
+            Values[whichTrap] = NewTrapspawn;
+            return NewPlayerLocation;
+            
         }
 
         public int ShootArrow(int ShootingInCave, int PlayerPos)

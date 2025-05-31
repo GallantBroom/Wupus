@@ -21,31 +21,37 @@ namespace UI
         public Main()
         {
             InitializeComponent();
-            //pictureBox1.Image = Properties.Resources.EmptyCave;
+            pictureBox1.Image = Properties.Resources.EmptyCave;
+            labelAlerts.Text = "";
         }
         public int cave { get; set; }
         public int[] TrapLocations { get; set; }
 
 
         GameControl.GameControl gamecontrol = new GameControl.GameControl();
+        GameLocation.GameLocation gameLocation = new GameLocation.GameLocation();
         int[] connectedRooms;
         
 
         int room = 1;
-
+        int Where = 0;
 
 
 
         private void warnUser()
         {
-            GameControl.GameControl gameControl = new GameControl.GameControl();
+            //label1.Text = connectedRooms[0].ToString();
+            //label2.Text = connectedRooms[1].ToString();
+            //label3.Text = connectedRooms[2].ToString();
+            //labelRoomNumber.Text = room.ToString();
             Select_Cave caveDLG = new Select_Cave();
 
             
-            int[] near = gameControl.giveUIHazards(connectedRooms,TrapLocations);
+            int[] near = gamecontrol.giveUIHazards(connectedRooms,TrapLocations);
 
             labelHints.Text = "";
-
+            labelHint2.Text = "";
+            labelHint3.Text = "";
 
             if (near[0] == 1)
             {
@@ -54,18 +60,14 @@ namespace UI
             }
             if (near[1] == 1)
             {
-                labelHints.Text += "You smell a Wumpus nearby.";
+                labelHint2.Text += "You smell a Wumpus nearby.";
                 
             }
             if (near[2] == 1)
             {
-                labelHints.Text += "You feel a Breeze.";
+                labelHint3.Text += "You feel a Breeze.";
                 
             }
-            
-
-
-
         }
 
 
@@ -134,19 +136,7 @@ namespace UI
 
             }
         }
-        private void changeRoom()
-        {
-            GameControl.GameControl gameControl = new GameControl.GameControl();
-
-            if (gameControl.isPlayerTrapped)
-            {
-
-
-                //room = gameControl.playerWasTrapped(cave, room);
-
-
-            }
-        }
+       
 
 
 
@@ -157,14 +147,6 @@ namespace UI
 
             connectingRooms();
             warnUser();
-
-
-
-
-
-
-
-
         }
 
         private void buttonNorthEast_Click(object sender, EventArgs e)
@@ -175,6 +157,8 @@ namespace UI
             else { room -= 5; }
             connectingRooms();
             warnUser();
+            Land();
+
         }
 
         private void buttonEast_Click(object sender, EventArgs e)
@@ -183,10 +167,10 @@ namespace UI
             if (room == 6 || room == 12 || room == 18 || room == 24 || room == 30) { room -= 5; }
 
             else { room += 1; }
-            //pictureBox1.Image = Properties.Resources.EmptyCave;
+           
             connectingRooms();
             warnUser();
-
+            Land();
         }
 
         private void buttonSouthEast_Click(object sender, EventArgs e)
@@ -198,6 +182,7 @@ namespace UI
            // pictureBox1.Image = Properties.Resources.EmptyCave;
             connectingRooms();
             warnUser();
+            Land();
         }
 
         private void buttonSouthWest_Click(object sender, EventArgs e)
@@ -208,6 +193,7 @@ namespace UI
             //pictureBox1.Image = Properties.Resources.EmptyCave;
             connectingRooms();
             warnUser();
+            Land();
         }
 
         private void buttonWest_Click(object sender, EventArgs e)
@@ -222,6 +208,7 @@ namespace UI
            // pictureBox1.Image = Properties.Resources.EmptyCave;
             connectingRooms();
             warnUser();
+            Land();
         }
 
         private void buttonNorthWest_Click(object sender, EventArgs e)
@@ -233,6 +220,7 @@ namespace UI
           //  pictureBox1.Image = Properties.Resources.EmptyCave;
             connectingRooms();
             warnUser();
+            Land();
         }
 
         private void buttonCalculateRoomDirections_Click(object sender, EventArgs e)
@@ -255,6 +243,35 @@ namespace UI
         private void buttonShop_Click(object sender, EventArgs e)
         {
 
+        }
+        private void Land()
+        {
+            labelAlerts.Text = "";
+            Where = gameLocation.PlayerMove(room, TrapLocations);
+            if (Where == 1)
+            {
+                pictureBox1.Image = Properties.Resources.Wumpus;
+                gamecontrol.GameLose();
+                labelAlerts.Text = "You have been eaten by the Wumpus! Game Over!";
+            }
+            else if (Where == 2)
+            {
+                pictureBox1.Image = Properties.Resources.Trap;
+                int newLoc = gameLocation.Trapped(room);
+                room = newLoc;
+
+                labelAlerts.Text = "You have been trapped! Your new position is: " + room;
+            }
+            else if (Where == 3)
+            {
+                pictureBox1.Image = Properties.Resources.PitCave;
+                gamecontrol.FellInPit();
+                labelAlerts.Text = "You have fallen into a pit!";
+            }
+            else
+            {
+                pictureBox1.Image = Properties.Resources.EmptyCave;
+            }
         }
     }
 }

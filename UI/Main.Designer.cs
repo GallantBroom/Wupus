@@ -43,6 +43,9 @@
             labelScoreAmount = new Label();
             labelScore = new Label();
             pictureBox1 = new PictureBox();
+            labelHint3 = new Label();
+            labelHint2 = new Label();
+            labelAlerts = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -115,7 +118,7 @@
             // labelHints
             // 
             labelHints.AutoSize = true;
-            labelHints.Location = new Point(387, 417);
+            labelHints.Location = new Point(388, 386);
             labelHints.Name = "labelHints";
             labelHints.Size = new Size(30, 15);
             labelHints.TabIndex = 13;
@@ -188,7 +191,6 @@
             // 
             // pictureBox1
             // 
-//            pictureBox1.Image = Properties.Resources.SkelitonCave;
             pictureBox1.Location = new Point(-12, -8);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(818, 466);
@@ -196,11 +198,41 @@
             pictureBox1.TabIndex = 23;
             pictureBox1.TabStop = false;
             // 
+            // labelHint3
+            // 
+            labelHint3.AutoSize = true;
+            labelHint3.Location = new Point(388, 417);
+            labelHint3.Name = "labelHint3";
+            labelHint3.Size = new Size(30, 15);
+            labelHint3.TabIndex = 24;
+            labelHint3.Text = "Hint";
+            // 
+            // labelHint2
+            // 
+            labelHint2.AutoSize = true;
+            labelHint2.Location = new Point(388, 402);
+            labelHint2.Name = "labelHint2";
+            labelHint2.Size = new Size(30, 15);
+            labelHint2.TabIndex = 25;
+            labelHint2.Text = "Hint";
+            // 
+            // labelAlerts
+            // 
+            labelAlerts.AutoSize = true;
+            labelAlerts.Location = new Point(362, 12);
+            labelAlerts.Name = "labelAlerts";
+            labelAlerts.Size = new Size(38, 15);
+            labelAlerts.TabIndex = 30;
+            labelAlerts.Text = "label5";
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(labelAlerts);
+            Controls.Add(labelHint2);
+            Controls.Add(labelHint3);
             Controls.Add(labelScoreAmount);
             Controls.Add(labelScore);
             Controls.Add(buttonShop);
@@ -241,5 +273,8 @@
         private Label labelScoreAmount;
         private Label labelScore;
         private PictureBox pictureBox1;
+        private Label labelHint3;
+        private Label labelHint2;
+        private Label labelAlerts;
     }
 }

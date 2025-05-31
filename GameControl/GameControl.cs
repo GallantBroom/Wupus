@@ -1,4 +1,4 @@
-﻿using GameLocation;
+﻿ using GameLocation;
 using High_Score;
 using System;
 using System.Collections.Generic;
@@ -16,7 +16,7 @@ namespace GameControl
 
         public bool isPlayerTrapped = false;
         GameLocation.GameLocation gameLocation = new GameLocation.GameLocation();
-        
+
 
         public GameControl() { 
         
@@ -80,13 +80,7 @@ namespace GameControl
         
         public void giveHintsToUI()
         {
-           
-            
-
-            
-
-
-            
+            //int[] near = gameLocation.GetCave(6, 30, 2);
         }
 
         
@@ -112,21 +106,38 @@ namespace GameControl
 
         }
 
-        //the player has encouintered a room with a trap. Find what trap it is and do the nessesary thing
-        //public int playerWasTrapped(int cave,int room)
+
+        //public int playerWasTrapped(int cave, int room)
         //{
-            
+
             //if (gameLocation.PlayerMove(cave) == GameLocation.GameLocation.Hazards.Trap)
             //{
+
+                //if (gameLocation.PlayerMove(cave) == GameLocation.GameLocation.Hazards.Trap)
+                //{
+
                 //i need to tell UI to move the player to a different room 
-               
-               // room = gameLocation.PlayerLocation;
-               // isPlayerTrapped = true;
+
+                //room = gameLocation.PlayerLocation;
+                // isPlayerTrapped = true;
 
 
 
 
 
+
+
+            //}
+            //else if (gameLocation.PlayerMove(cave) == GameLocation.GameLocation.Hazards.Wumpus)
+            //{
+                //GameLose();
+            //}
+            //else if (gameLocation.PlayerMove(cave) == GameLocation.GameLocation.Hazards.Pit)
+            //{
+
+            //}
+        //}
+                
 
            // }
            // else if(gameLocation.PlayerMove(cave) == GameLocation.GameLocation.Hazards.Wumpus)
@@ -136,6 +147,7 @@ namespace GameControl
             //else if (gameLocation.PlayerMove(cave) == GameLocation.GameLocation.Hazards.Pit)
            // {
               //  GameLose();
+
                 
            // }
 
@@ -173,9 +185,12 @@ namespace GameControl
         }
 
      
+       public void FellInPit()
+        {
+            
+        }
 
 
-       
 
 
 
