@@ -7,6 +7,7 @@ using Player;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -28,30 +29,32 @@ namespace UI
         }
         public int cave { get; set; }
         public int[] TrapLocations { get; set; }
+        public List<PlayerScore> highScores;
+
 
 
         GameControl.GameControl gamecontrol = new GameControl.GameControl();
         GameLocation.GameLocation gameLocation = new GameLocation.GameLocation();
         Player.PlayerClass player = new Player.PlayerClass();
         int[] connectedRooms;
-        
+
 
         int room = 1;
         int Where = 0;
         int turns = 0;
-
+        bool gameOverFlag = true;
 
         private void warnUser()
         {
-            
+
             //label1.Text = connectedRooms[0].ToString();
             //label2.Text = connectedRooms[1].ToString();
             //label3.Text = connectedRooms[2].ToString();
             //labelRoomNumber.Text = room.ToString();
             Select_Cave caveDLG = new Select_Cave();
 
-            
-            int[] near = gamecontrol.giveUIHazards(connectedRooms,TrapLocations);
+
+            int[] near = gamecontrol.giveUIHazards(connectedRooms, TrapLocations);
 
             labelHints.Text = "";
             labelHint2.Text = "";
@@ -65,13 +68,23 @@ namespace UI
             if (near[1] == 1)
             {
                 labelHint2.Text += "You smell a Wumpus nearby.";
-                
+
             }
             if (near[2] == 1)
             {
                 labelHint3.Text += "You feel a Breeze.";
-                
+
             }
+        }
+        public List<PlayerScore> gameLost() 
+        {
+            if(gameOverFlag)
+                highScores = gamecontrol.displayHighScores(false, cave, "Player");
+            Game_Over gameOverForm = new Game_Over();
+
+                gameOverForm.ShowDialog();
+
+              return highScores;
         }
 
 
@@ -137,7 +150,7 @@ namespace UI
 
             }
         }
-       
+
 
 
 
@@ -157,7 +170,7 @@ namespace UI
                 int[] Wumpus = gamecontrol.giveUIHazards(connectedRooms, TrapLocations);
                 if (Wumpus[1] == 1)
                 {
-                    
+
                 }
             }
             else
@@ -169,7 +182,7 @@ namespace UI
                 warnUser();
                 Land();
             }
-            
+
 
         }
 
@@ -179,7 +192,7 @@ namespace UI
             if (room == 6 || room == 12 || room == 18 || room == 24 || room == 30) { room -= 5; }
 
             else { room += 1; }
-           
+
             connectingRooms();
             warnUser();
             Land();
@@ -191,7 +204,7 @@ namespace UI
             else if (room == 26 || room == 25 || room == 27 || room == 28 || room == 29) { room -= 23; }
 
             else { room += 6; }
-           // pictureBox1.Image = Properties.Resources.EmptyCave;
+            // pictureBox1.Image = Properties.Resources.EmptyCave;
             connectingRooms();
             warnUser();
             Land();
@@ -217,7 +230,7 @@ namespace UI
 
             }
             else { room -= 1; }
-           // pictureBox1.Image = Properties.Resources.EmptyCave;
+            // pictureBox1.Image = Properties.Resources.EmptyCave;
             connectingRooms();
             warnUser();
             Land();
@@ -229,7 +242,7 @@ namespace UI
             else if (room == 3 || room == 2 || room == 4 || room == 5 || room == 6) { room += 23; }
 
             else { room -= 6; }
-          //  pictureBox1.Image = Properties.Resources.EmptyCave;
+            //  pictureBox1.Image = Properties.Resources.EmptyCave;
             connectingRooms();
             warnUser();
             Land();
@@ -249,7 +262,7 @@ namespace UI
         private void labelHints_Click(object sender, EventArgs e)
         {
 
-
+           
         }
 
         private void buttonShop_Click(object sender, EventArgs e)
@@ -263,7 +276,8 @@ namespace UI
             if (Where == 1)
             {
                 pictureBox1.Image = Properties.Resources.Wumpus;
-                gamecontrol.GameLose();
+               gameLost();
+                gameOverFlag = false;
                 labelAlerts.Text = "You have been eaten by the Wumpus! Game Over!";
             }
             else if (Where == 2)
@@ -286,6 +300,12 @@ namespace UI
             }
             turns = player.PlayerMove();
             labelTurns.Text = "Turns: " + turns.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            gameLost();
+            gameOverFlag = false;
         }
     }
 }

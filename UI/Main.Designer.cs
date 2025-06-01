@@ -46,6 +46,7 @@
             labelAlerts = new Label();
             radioButton1 = new RadioButton();
             labelTurns = new Label();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -223,15 +224,26 @@
             labelTurns.AutoSize = true;
             labelTurns.Location = new Point(645, 12);
             labelTurns.Name = "labelTurns";
-            labelTurns.Size = new Size(36, 15);
+            labelTurns.Size = new Size(37, 15);
             labelTurns.TabIndex = 32;
             labelTurns.Text = "Turns";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(483, 238);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 33;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
             Controls.Add(labelTurns);
             Controls.Add(radioButton1);
             Controls.Add(labelAlerts);
@@ -278,5 +290,6 @@
         private Label labelAlerts;
         private RadioButton radioButton1;
         private Label labelTurns;
+        private Button button1;
     }
 }

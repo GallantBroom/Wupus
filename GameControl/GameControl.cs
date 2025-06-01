@@ -2,6 +2,7 @@
 using High_Score;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -16,6 +17,8 @@ namespace GameControl
 
         public bool isPlayerTrapped = false;
         GameLocation.GameLocation gameLocation = new GameLocation.GameLocation();
+        High_Score.High_Score highScore = new High_Score.High_Score();
+        Player.PlayerClass player = new Player.PlayerClass();
 
 
         public GameControl() { 
@@ -60,8 +63,18 @@ namespace GameControl
 
         
         
-        public string displayHighScores(string userName,string score, string position)
+        public List<PlayerScore> displayHighScores(bool killedWumpus, int cave, string playerName)
         {
+
+          int playerScore = player.GetScore(killedWumpus);
+            List<PlayerScore> scores = highScore.Scores;
+            // Display the scores in a formatted string
+
+
+
+            PlayerScore playerScoreObj = new PlayerScore(playerName, (ulong)playerScore, cave);
+
+            bool isTopScore = highScore.AddScore(playerName, (ulong)playerScore, cave);
 
 
             
@@ -74,7 +87,14 @@ namespace GameControl
 
 
 
-            return userName;
+
+
+
+
+
+
+
+            return scores;
 
         }
         
