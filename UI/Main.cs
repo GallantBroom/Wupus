@@ -290,9 +290,10 @@ namespace UI
             }
             else if (Where == 3)
             {
+                gameLost();
                 pictureBox1.Image = Properties.Resources.PitCave;
                 gamecontrol.FellInPit();
-                labelAlerts.Text = "You have fallen into a pit!";
+                labelAlerts.Text = "You have fallen into a pit!, Game Over!";
             }
             else
             {
