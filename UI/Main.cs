@@ -135,9 +135,6 @@ namespace UI
                     buttonSouthWest.Enabled = true;
                 }
 
-
-
-
             }
         }
        
@@ -155,13 +152,24 @@ namespace UI
 
         private void buttonNorthEast_Click(object sender, EventArgs e)
         {
-
-            if (room == 5 || room == 1 || room == 2 || room == 3 || room == 4 || room == 6) { room += 24; }
-            else if (room == 30 || room == 24 || room == 18 || room == 12) { room -= 11; }
-            else { room -= 5; }
-            connectingRooms();
-            warnUser();
-            Land();
+            if (radioButton1.Checked)
+            {
+                int[] Wumpus = gamecontrol.giveUIHazards(connectedRooms, TrapLocations);
+                if (Wumpus[1] == 1)
+                {
+                    
+                }
+            }
+            else
+            {
+                if (room == 5 || room == 1 || room == 2 || room == 3 || room == 4 || room == 6) { room += 24; }
+                else if (room == 30 || room == 24 || room == 18 || room == 12) { room -= 11; }
+                else { room -= 5; }
+                connectingRooms();
+                warnUser();
+                Land();
+            }
+            
 
         }
 
