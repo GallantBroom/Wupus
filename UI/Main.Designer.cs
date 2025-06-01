@@ -40,12 +40,12 @@
             labelGoldAmount = new Label();
             labelArrowAmount = new Label();
             buttonShop = new Button();
-            labelScoreAmount = new Label();
-            labelScore = new Label();
             pictureBox1 = new PictureBox();
             labelHint3 = new Label();
             labelHint2 = new Label();
             labelAlerts = new Label();
+            radioButton1 = new RadioButton();
+            labelTurns = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -171,27 +171,9 @@
             buttonShop.UseVisualStyleBackColor = true;
             buttonShop.Click += buttonShop_Click;
             // 
-            // labelScoreAmount
-            // 
-            labelScoreAmount.AutoSize = true;
-            labelScoreAmount.Location = new Point(766, 417);
-            labelScoreAmount.Name = "labelScoreAmount";
-            labelScoreAmount.Size = new Size(13, 15);
-            labelScoreAmount.TabIndex = 22;
-            labelScoreAmount.Text = "0";
-            // 
-            // labelScore
-            // 
-            labelScore.AutoSize = true;
-            labelScore.Location = new Point(749, 386);
-            labelScore.Name = "labelScore";
-            labelScore.Size = new Size(39, 15);
-            labelScore.TabIndex = 21;
-            labelScore.Text = "Score:";
-            // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(-12, -8);
+            pictureBox1.Location = new Point(-11, -9);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(818, 466);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -225,16 +207,36 @@
             labelAlerts.TabIndex = 30;
             labelAlerts.Text = "label5";
             // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.Location = new Point(697, 419);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(91, 19);
+            radioButton1.TabIndex = 31;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "Shoot Arrow";
+            radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // labelTurns
+            // 
+            labelTurns.AutoSize = true;
+            labelTurns.Location = new Point(645, 12);
+            labelTurns.Name = "labelTurns";
+            labelTurns.Size = new Size(36, 15);
+            labelTurns.TabIndex = 32;
+            labelTurns.Text = "Turns";
+            // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(labelTurns);
+            Controls.Add(radioButton1);
             Controls.Add(labelAlerts);
             Controls.Add(labelHint2);
             Controls.Add(labelHint3);
-            Controls.Add(labelScoreAmount);
-            Controls.Add(labelScore);
             Controls.Add(buttonShop);
             Controls.Add(labelGoldAmount);
             Controls.Add(labelArrowAmount);
@@ -270,11 +272,11 @@
         private Label labelGoldAmount;
         private Label labelArrowAmount;
         private Button buttonShop;
-        private Label labelScoreAmount;
-        private Label labelScore;
         private PictureBox pictureBox1;
         private Label labelHint3;
         private Label labelHint2;
         private Label labelAlerts;
+        private RadioButton radioButton1;
+        private Label labelTurns;
     }
 }

@@ -12,6 +12,7 @@
     <ProjectReference Include="..\CaveTest\CaveTest.csproj" />
     <ProjectReference Include="..\GameControl\GameControl.csproj" />
     <ProjectReference Include="..\High_Score\High_Score.csproj" />
+    <ProjectReference Include="..\Player\Player.csproj" />
   </ItemGroup>
 
   <ItemGroup>

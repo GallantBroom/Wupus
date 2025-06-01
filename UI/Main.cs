@@ -2,6 +2,8 @@
 using CaveTest;
 using GameControl;
 using GameLocation;
+using High_Score;
+using Player;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,16 +32,18 @@ namespace UI
 
         GameControl.GameControl gamecontrol = new GameControl.GameControl();
         GameLocation.GameLocation gameLocation = new GameLocation.GameLocation();
+        Player.PlayerClass player = new Player.PlayerClass();
         int[] connectedRooms;
         
 
         int room = 1;
         int Where = 0;
-
+        int turns = 0;
 
 
         private void warnUser()
         {
+            
             //label1.Text = connectedRooms[0].ToString();
             //label2.Text = connectedRooms[1].ToString();
             //label3.Text = connectedRooms[2].ToString();
@@ -272,6 +276,8 @@ namespace UI
             {
                 pictureBox1.Image = Properties.Resources.EmptyCave;
             }
+            turns = player.PlayerMove();
+            labelTurns.Text = "Turns: " + turns.ToString();
         }
     }
 }
