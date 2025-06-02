@@ -58,19 +58,13 @@ namespace GameControl
 
         
         
-        public List<PlayerScore> displayHighScores(bool killedWumpus, int cave, string playerName)
+        public PlayerScore displayHighScores(bool killedWumpus, int cave, string playerName)
         {
             
           int playerScore = player.GetScore(killedWumpus);
             
             PlayerScore playerScoreObj = new PlayerScore(playerName, (ulong)playerScore, cave);
 
-            highScore.AddScore(playerName);
-
-           
-
-
-            
 
 
 
@@ -87,7 +81,13 @@ namespace GameControl
 
 
 
-            return scores;
+
+
+
+
+
+
+            return playerScoreObj;
 
         }
         
