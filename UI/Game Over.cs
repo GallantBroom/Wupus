@@ -24,23 +24,15 @@ namespace UI
 
         private void Game_Over_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void buttonViewHighScores_Click(object sender, EventArgs e)
+        {
             HighScore highscores = new HighScore();
             highscores.ShowDialog();
         }
 
-        // private void buttonViewHighScores_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //  private void buttonViewHighScores_Click(object sender, EventArgs e)
-        // {
-
-
-
-
-
-
-        //  }
+        
     }
 }

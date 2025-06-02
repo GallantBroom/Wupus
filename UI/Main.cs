@@ -35,7 +35,7 @@ namespace UI
 
         GameControl.GameControl gamecontrol = new GameControl.GameControl();
         GameLocation.GameLocation gameLocation = new GameLocation.GameLocation();
-        Player.PlayerClass player = new Player.PlayerClass();
+        
         int[] connectedRooms;
 
 
@@ -76,16 +76,7 @@ namespace UI
 
             }
         }
-        public List<PlayerScore> gameLost() 
-        {
-            if(gameOverFlag)
-                highScores = gamecontrol.displayHighScores(false, cave, "Player");
-            Game_Over gameOverForm = new Game_Over();
-
-                gameOverForm.ShowDialog();
-
-              return highScores;
-        }
+       
 
 
 
@@ -165,6 +156,7 @@ namespace UI
 
         private void buttonNorthEast_Click(object sender, EventArgs e)
         {
+            
             if (radioButton1.Checked)
             {
                 int[] Wumpus = gamecontrol.giveUIHazards(connectedRooms, TrapLocations);
@@ -182,6 +174,7 @@ namespace UI
                 warnUser();
                 Land();
             }
+            turns++;
 
 
         }
@@ -196,6 +189,8 @@ namespace UI
             connectingRooms();
             warnUser();
             Land();
+            turns++;
+
         }
 
         private void buttonSouthEast_Click(object sender, EventArgs e)
@@ -208,6 +203,8 @@ namespace UI
             connectingRooms();
             warnUser();
             Land();
+            turns++;
+
         }
 
         private void buttonSouthWest_Click(object sender, EventArgs e)
@@ -219,6 +216,8 @@ namespace UI
             connectingRooms();
             warnUser();
             Land();
+            turns++;
+
         }
 
         private void buttonWest_Click(object sender, EventArgs e)
@@ -234,6 +233,8 @@ namespace UI
             connectingRooms();
             warnUser();
             Land();
+            turns++;
+
         }
 
         private void buttonNorthWest_Click(object sender, EventArgs e)
@@ -246,6 +247,8 @@ namespace UI
             connectingRooms();
             warnUser();
             Land();
+            turns++;
+
         }
 
         private void buttonCalculateRoomDirections_Click(object sender, EventArgs e)
@@ -262,7 +265,7 @@ namespace UI
         private void labelHints_Click(object sender, EventArgs e)
         {
 
-           
+
         }
 
         private void buttonShop_Click(object sender, EventArgs e)
@@ -276,9 +279,12 @@ namespace UI
             if (Where == 1)
             {
                 pictureBox1.Image = Properties.Resources.Wumpus;
-               gameLost();
+               
                 gameOverFlag = false;
                 labelAlerts.Text = "You have been eaten by the Wumpus! Game Over!";
+                Game_Over gameOverForm = new Game_Over();
+
+                gameOverForm.ShowDialog();
             }
             else if (Where == 2)
             {
@@ -290,23 +296,35 @@ namespace UI
             }
             else if (Where == 3)
             {
-                gameLost();
+               
                 pictureBox1.Image = Properties.Resources.PitCave;
                 gamecontrol.FellInPit();
                 labelAlerts.Text = "You have fallen into a pit!, Game Over!";
+                Game_Over gameOverForm = new Game_Over();
+
+                gameOverForm.ShowDialog();
+
             }
             else
             {
                 pictureBox1.Image = Properties.Resources.EmptyCave;
             }
-            turns = player.PlayerMove();
+            
             labelTurns.Text = "Turns: " + turns.ToString();
+            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            gameLost();
+            
+            gamecontrol.displayHighScores(true,3,"Hello!");
             gameOverFlag = false;
+        }
+
+        private void labelTurns_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

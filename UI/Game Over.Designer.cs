@@ -40,7 +40,7 @@
             buttonViewHighScores.TabIndex = 0;
             buttonViewHighScores.Text = "View High Scores";
             buttonViewHighScores.UseVisualStyleBackColor = true;
-            buttonViewHighScores.Visible = false;
+            buttonViewHighScores.Click += buttonViewHighScores_Click;
             // 
             // labelGameOver
             // 

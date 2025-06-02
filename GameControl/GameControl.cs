@@ -43,14 +43,9 @@ namespace GameControl
             return values;
 
         }
+         
         // end the game, go back to the menu screen
-        public void GameLose()
-        {
-           
-           
-
-
-        }
+        
 
         public void GameWin()
         {
@@ -65,16 +60,14 @@ namespace GameControl
         
         public List<PlayerScore> displayHighScores(bool killedWumpus, int cave, string playerName)
         {
-
+            
           int playerScore = player.GetScore(killedWumpus);
-            List<PlayerScore> scores = highScore.Scores;
-            // Display the scores in a formatted string
-
-
-
+            
             PlayerScore playerScoreObj = new PlayerScore(playerName, (ulong)playerScore, cave);
 
-            bool isTopScore = highScore.AddScore(playerName, (ulong)playerScore, cave);
+            highScore.AddScore(playerName);
+
+           
 
 
             

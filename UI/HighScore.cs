@@ -14,9 +14,9 @@ namespace UI
     public partial class HighScore : Form
     {
 
-        High_Score.High_Score[] topPlayers = new High_Score.High_Score[9];
-        Game_Over its_Over = new Game_Over();
-        
+        List<PlayerScore> highScores;
+
+
         public HighScore()
         {
             InitializeComponent();
@@ -30,11 +30,10 @@ namespace UI
 
             //Get the top scores from high score
             //topScores = High_Score.High_Score.getTopScores();
-            Main main = new Main();
+            
+            
 
-            List<PlayerScore> highScores = main.gameLost();
-
-            its_Over.Close();
+            
 
 
 
