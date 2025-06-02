@@ -29,7 +29,30 @@ namespace TriviaTest
 
         private void buttonSubmit_Click(object sender, EventArgs e)
         {
+            string question = buttonGet_Question.Text;
+            string answer = buttonSubmit.Text;
 
+            
+            bool isCorrect = CheckAnswer(answer);
+
+
+            if (isCorrect)
+            {
+                buttonSubmit.Text = (int.Parse(buttonSubmit.Text) + 1).ToString();
+                MessageBox.Show("Correct!");
+            }
+            else
+            {
+                MessageBox.Show("Incorrect. The correct answer is: " + answer);
+            }
+
+          
+            
+        }
+
+        private bool CheckAnswer(string answer)
+        {
+            throw new NotImplementedException();
         }
     }
 }

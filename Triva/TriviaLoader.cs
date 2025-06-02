@@ -21,7 +21,7 @@ namespace Trivia
             while (line != null)
             {
                 string[] record = line.Split(',');
-                TriviaQuestion question = new TriviaQuestion(record[0], record[1], record[2], record[3], int.Parse(record[4]));
+                TriviaQuestion question = new TriviaQuestion(record[0], record[1], record[2], record[3],record[4], int.Parse(record[5]));
                 questions.Add(question);
                 line = streamReader.ReadLine();
 
