@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography;
@@ -12,6 +13,7 @@ namespace GameLocation
 {
     public class GameLocation
     {
+        
         public int PlayerLocation { get; set; }
         public int Cave { get; set; }
         public GameLocation()
@@ -28,6 +30,7 @@ namespace GameLocation
         public int PitSpawn2 = 0;
         public int PitSpawn3 = 0;
         public int[] Values = new int[7];
+        public int[] Coins = new int[10]; // Array to hold coin locations
         public int[] Spawn()
         {
 
@@ -52,197 +55,34 @@ namespace GameLocation
             PitSpawn3 = values[6];
             Values = values;
             return Values;
-
-            //Random random = new Random();
-            //int Trapspawn = random.Next(2, 30);
-            //int Trapspawn2 = random.Next(2, 30);
-            //int Trapspawn3 = random.Next(2, 30);
-            //int Wumpusspawn = random.Next(2, 30);
-            //int Pitspawn = random.Next(2, 30);
-            //int Pitspawn2 = random.Next(2, 30);
-            //int Pitspawn3 = random.Next(2, 30);
-            //while (Wumpusspawn == Trapspawn || Trapspawn == Pitspawn || Wumpusspawn == Pitspawn ||
-            //    Wumpusspawn == Trapspawn2 || Wumpusspawn == Trapspawn3 || Wumpusspawn == Pitspawn2 ||
-            //    Wumpusspawn == Pitspawn3 || Trapspawn == Pitspawn2 || Trapspawn == Pitspawn3 || Trapspawn2 == Pitspawn ||
-            //    Trapspawn3 == Pitspawn || Trapspawn2 == Pitspawn2 || Trapspawn2 == Pitspawn3 || Trapspawn3 == Pitspawn2 || Pitspawn == Pitspawn2 || Pitspawn == Pitspawn3 || Pitspawn2 == Pitspawn3)
-            //{
-            //    if (Wumpusspawn == Trapspawn)
-            //    {
-            //        if (Wumpusspawn != 30)
-            //        {
-            //            Wumpusspawn += 1;
-            //        }
-            //        else
-            //        {
-            //            Wumpusspawn = 2;
-            //        }
-            //    }
-            //    else if (Trapspawn == Pitspawn)
-            //    {
-            //        if (Pitspawn != 30)
-            //        {
-            //            Pitspawn += 1;
-            //        }
-            //        else
-            //        {
-            //            Pitspawn = 2;
-            //        }
-
-            //    }
-            //    else if (Wumpusspawn == Pitspawn)
-            //    {
-            //        if (Wumpusspawn != 30)
-            //        {
-            //            Wumpusspawn += 1;
-            //        }
-            //        else
-            //        {
-            //            Wumpusspawn = 2;
-            //        }
-
-            //    }
-            //    else if (Wumpusspawn == Trapspawn2)
-            //    {
-            //        if (Wumpusspawn != 30)
-            //        {
-            //            Wumpusspawn += 1;
-            //        }
-            //        else
-            //        {
-            //            Wumpusspawn = 2;
-            //        }
-            //    }
-            //    else if (Wumpusspawn == Trapspawn3)
-            //    {
-            //        if (Wumpusspawn != 30)
-            //        {
-            //            Wumpusspawn += 1;
-            //        }
-            //        else
-            //        {
-            //            Wumpusspawn = 2;
-            //        }
-            //    }
-            //    else if (Wumpusspawn == Pitspawn2)
-            //    {
-            //        if (Wumpusspawn != 30)
-            //        {
-            //            Wumpusspawn += 1;
-            //        }
-            //        else
-            //        {
-            //            Wumpusspawn = 2;
-            //        }
-            //    }
-            //    else if (Wumpusspawn == Pitspawn3)
-            //    {
-            //        if (Wumpusspawn != 30)
-            //        {
-            //            Wumpusspawn += 1;
-            //        }
-            //        else
-            //        {
-            //            Wumpusspawn = 2;
-            //        }
-            //    }
-            //    else if (Trapspawn == Trapspawn2)
-            //    {
-            //        if (Trapspawn != 30)
-            //        {
-            //            Trapspawn += 1;
-            //        }
-            //        else
-            //        {
-            //            Trapspawn = 2;
-            //        }
-            //    }
-            //    else if (Trapspawn == Trapspawn3)
-            //    {
-            //        if (Trapspawn != 30)
-            //        {
-            //            Trapspawn += 1;
-            //        }
-            //        else
-            //        {
-            //            Trapspawn = 2;
-            //        }
-            //    }
-            //    else if (Trapspawn == Pitspawn2)
-            //    {
-            //        if (Trapspawn != 30)
-            //        {
-            //            Trapspawn += 1;
-            //        }
-            //        else
-            //        {
-            //            Trapspawn = 2;
-            //        }
-            //    }
-            //    else if (Trapspawn == Pitspawn3)
-            //    {
-            //        if (Trapspawn != 30)
-            //        {
-            //            Trapspawn += 1;
-            //        }
-            //        else
-            //        {
-            //            Trapspawn = 2;
-            //        }
-            //    }
-            //    else if (PitSpawn == Pitspawn2)
-            //    {
-            //        if (Pitspawn2 != 30)
-            //        {
-            //            Pitspawn2 += 1;
-            //        }
-            //        else
-            //        {
-            //            Pitspawn2 = 2;
-            //        }
-            //    }
-            //    else if (PitSpawn == Pitspawn3)
-            //    {
-            //        if (Pitspawn3 != 30)
-            //        {
-            //            Pitspawn3 += 1;
-            //        }
-            //        else
-            //        {
-            //            Pitspawn3 = 2;
-            //        }
-            //    }
-            //    else if (Trapspawn2 == Trapspawn3)
-            //    {
-            //        if (Trapspawn3 != 30)
-            //        {
-            //            Trapspawn3 += 1;
-            //        }
-            //        else
-            //        {
-            //            Trapspawn3 = 2;
-            //        }
-            //    }      
-            //}
-            //WumpusSpawn = Wumpusspawn;
-            //TrapSpawn = Trapspawn;
-            //PitSpawn = Pitspawn;
-            //TrapSpawn2 = Trapspawn2;
-            //TrapSpawn3 = Trapspawn3;
-            //PitSpawn2 = Pitspawn2;
-            //PitSpawn3 = Pitspawn3;
-            //return new int[] { Trapspawn, Wumpusspawn, Pitspawn, Trapspawn2, Trapspawn3, Pitspawn2, Pitspawn3 };
-
-
         }
+
+        public int[] SpawnCoins()
+        {
+            Random random = new Random();
+            HashSet<int> usedNumbers = new HashSet<int>();
+
+            while (usedNumbers.Count < 10)
+            {
+                usedNumbers.Add(random.Next(2, 30));
+            }
+            int[] values = new int[10];
+            usedNumbers.CopyTo(values);
+            Coins = values;
+            return values;
+        }
+
+
         public enum Hazards
         {
             Nothing,
             Wumpus,
             Trap,
             Pit
+           
         }
 
-        public Hazards PlayerMove(int cave)
+        public int PlayerMove(int cave, int[] values)
         {
             //I need more info
             //I need which cave the player is moving to
@@ -255,42 +95,57 @@ namespace GameLocation
 
             PlayerLocation = cave;
 
-            if (PlayerLocation == WumpusSpawn)
+            if (PlayerLocation == values[1])
             {
-                return Hazards.Wumpus;
+                return 1;
             }
-            else if (PlayerLocation == TrapSpawn || PlayerLocation == TrapSpawn2 || PlayerLocation == TrapSpawn3)
+            else if (PlayerLocation == values[0] || PlayerLocation == values[3] || PlayerLocation == values[4])
             {
-                Trapped();
-                return Hazards.Trap;
+                
+                return 2;
             }
-            else if (PlayerLocation == PitSpawn || PlayerLocation == PitSpawn2 || PlayerLocation == PitSpawn3)
+            else if (PlayerLocation == values[2] || PlayerLocation == values[5] || PlayerLocation == values[6])
             {
-                return Hazards.Pit;
+                
+                return 3;
             }
-            return Hazards.Nothing;
+            
+            return 0;
+        }
+        public int CheckCoin(int cave)
+        {
+            PlayerLocation = cave;
+            for (int i = 0; i < 10; i++)
+            {
+                if (Coins[i] == PlayerLocation)
+                {
+                    Coins[i] = 0;
+                    return 1;
+                }
+            }
+            return 0; // No coin found in the cave
         }
 
-        public int[] GetCave(int adg1, int adg2, int adg3)
+        public int[] GetCave(int adg1, int adg2, int adg3, int[] trappedLocations)
         {
             int NearTrap = 0;
             int NearWumpus = 0;
             int NearPit = 0;
             for (int i = 0; i < 7; i++)
             {
-                if (Values[i] == adg1 || Values[i] == adg2 || Values[i] == adg3)
+                if (trappedLocations[i] == adg1 || trappedLocations[i] == adg2 || trappedLocations[i] == adg3)
                 {
-                    if (Values[i] == TrapSpawn || Values[i] == TrapSpawn2 || Values[i] == TrapSpawn3)
+                    if (i == 0||i == 3 || i == 4)
                     {
                         NearTrap = 1;
                         
                     }
-                    else if (Values[i] == WumpusSpawn)
+                    if (i == 1)
                     {
                         NearWumpus = 1;
                         
                     }
-                    else if (Values[i] == PitSpawn || Values[i] == PitSpawn2 || Values[i] == PitSpawn3)
+                    if (i == 2 || i == 5 || i == 6)
                     {
                         NearPit = 1;  
                     }
@@ -321,42 +176,58 @@ namespace GameLocation
         }
 
 
-        private void Trapped()
+        public int Trapped(int room)
         {
+            int whichTrap = 0;
             Random random = new Random();
             Random rand = new Random();
             int NewPlayerLocation = rand.Next(1, 30);
             int NewTrapspawn = random.Next(2, 30);
-            while (NewTrapspawn == NewPlayerLocation || NewPlayerLocation == WumpusSpawn || NewPlayerLocation == PitSpawn)
+            for(int i = 0; i < 7; i++)
             {
-                if (NewTrapspawn != 30)
+                if (Values[i] == NewPlayerLocation)
                 {
-                    NewTrapspawn = +1;
+                    NewPlayerLocation = rand.Next(1, 30);
+                    i = -1; // Reset the loop to check again
                 }
-                else
-                {
-                    NewTrapspawn = 1;
-                }
-                
             }
-            while (NewPlayerLocation == TrapSpawn || NewPlayerLocation == WumpusSpawn || NewPlayerLocation == PitSpawn)
+            for (int i = 0; i < 7; i++)
             {
-                if (NewPlayerLocation != 30)
+                if (Values[i] == NewTrapspawn)
                 {
-                    NewPlayerLocation = +1;
-                }
-                else
-                {
-                    NewPlayerLocation = 1;
+                    NewTrapspawn = random.Next(2, 30);
+                    i = -1; // Reset the loop to check again
                 }
             }
             
-            PlayerLocation = NewPlayerLocation;
-            TrapSpawn = NewTrapspawn;
+            while (NewTrapspawn == NewPlayerLocation)
+            {
+                for (int i = 0; i < 7; i++)
+                {
+                    if (Values[i] == NewTrapspawn)
+                    {
+                        NewTrapspawn = random.Next(2, 30);
+                        i = -1; // Reset the loop to check again
+                    }
+                }
+
+            }
+            for (int i = 0; i < 7; i++)
+            {
+                if (Values[i] == room)
+                {
+                    whichTrap = i;
+                }
+            }
+
+            Values[whichTrap] = NewTrapspawn;
+            return NewPlayerLocation;
+            
         }
 
         public int ShootArrow(int ShootingInCave, int PlayerPos)
         {
+            
             if (ShootingInCave == WumpusSpawn)
             {
                 return 0;
@@ -364,7 +235,6 @@ namespace GameLocation
             else
             {
                 return 1;
-                
             }
         }
 

@@ -26,24 +26,24 @@ namespace GameLocationTest2
         private void button2_Click(object sender, EventArgs e)
         {
             
-            int[] near = gameLocation.GetCave(6,30,2);
+            //int[] near = gameLocation.GetCave(6,30,2);
             
             label4.Text = "";
             label5.Text = "";
             label6.Text = "";
             
-            if (near[0] == 1)
-            {
-                label4.Text = "There's a Skeleton in this room, there must be a trap nearby.";
-            }
-            if (near[1] ==1)
-            {
-                label5.Text = "You smell a Wumpus nearby.";
-            }
-            if (near[2] == 1)
-            {
-                label6.Text = "You feel a Breeze.";
-            }
+           // if (near[0] == 1)
+            //{
+           //     label4.Text = "There's a Skeleton in this room, there must be a trap nearby.";
+           // }
+           // if (near[1] ==1)
+           // {
+           //     label5.Text = "You smell a Wumpus nearby.";
+           // }
+          //  if (near[2] == 1)
+          //  {
+           //     label6.Text = "You feel a Breeze.";
+           // }
 
         }
     }

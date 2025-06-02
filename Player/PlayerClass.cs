@@ -1,31 +1,60 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.PerformanceData;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GameLocation;
 
 namespace Player
 {
+    
     public class PlayerClass
     {
-        public string name { get; set; }
-        public int score { get; set; }
-        public int position { get; set; }
-        public int arrows { get; set; }
-        public int gold { get; set; }
-        public int room { get; set; }
-        public bool alive { get; set; }
-        public PlayerClass(string name, int score, int position, int arrows, int gold, int room, bool alive)
+        
+        GameLocation.GameLocation gameLocation = new GameLocation.GameLocation();
+        public int Arrows { get; set; }
+        public int Coins { get; set; }
+        public int Turns { get; set; }
+        public int[] inv { get; set; }
+
+
+        public PlayerClass()
         {
-            this.name = name;
-            this.score = score;
-            this.position = position;
-            this.arrows = arrows;
-            this.gold = gold;
-            this.room = room;
-            this.alive = alive;
+            Arrows = 3; 
+            Coins = 5; 
+            Turns = 0;
+        }
+        public void arrowshot()
+        {
+            Arrows--;
         }
 
-        
+        public int PlayerMove()
+        {
+            Turns++;
+            return Turns;
+        }
+
+        public int GetScore(bool killedWumpus)
+        {
+            if (killedWumpus)
+            {
+                return ((Arrows * 10) - Turns + Coins) + 1000;
+            }
+            else
+            {
+                return (Arrows * 10) - Turns + Coins;
+            }
+            
+        }
+        public void AddCoin()
+        {
+            Coins++;
+        }
+        public int GetCoins()
+        {
+            return Coins;
+        }
     }
 }
